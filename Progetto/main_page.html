@@ -1,25 +1,27 @@
 <html>
-    <head>
+
+<head>
     <title>Marvel figure</title>
     <link rel="icon" href="marvel_icona.webp" type="image/x-icon">
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-    <nav class="navbar"> 
-    <div class="navbar-left">
-            <a href="#"> <img src="marvel_icona.webp" alt="icona a sinistra" ></a>
+    <nav class="navbar">
+        <div class="navbar-left">
+            <a href="#"> <img src="marvel_icona.webp" alt="icona a sinistra"></a>
+        </div>
+        <center>
+            <div class="search-bar">
+                <input type="text" id="searchInput" placeholder="Cerca...">
+                <button id="searchButton">Cerca</button>
             </div>
-            <center>
-                <div class="search-bar">
-                    <input type="text" id="searchInput" placeholder="Cerca...">
-                    <button id="searchButton">Cerca</button>
-                </div>
-            </center>
-            <div class="navbar-right">
-                <a href="#" id = "userIcon"><img src="icona_utente.jpeg" alt="icona a destra"></a>
-            </div>
-        </nav>
-        <h1>Registrazione</h1>
+        </center>
+        <div class="navbar-right">
+            <a href="#" id="userIcon"><img src="icona_utente.jpeg" alt="icona a destra"></a>
+        </div>
+    </nav>
+    <h1>Registrazione</h1>
     <form id="registrationForm">
         <div>
             <label for="username">Nome utente:</label>
@@ -37,7 +39,7 @@
     <h1>Login</h1>
     <form id="loginForm">
         <div>
-            <label for="loginUsername">Nome utente o email:</label>
+            <label for="loginUsername">Nome utente</label>
             <input type="text" id="loginUsername" name="loginUsername" required>
         </div>
         <div>
@@ -56,7 +58,7 @@
             alert("Registrazione avvenuta con successo!");
             redirectToHome();
         }
-    
+
         // Funzione per effettuare il login
         function login(username, password) {
             const storedPassword = localStorage.getItem(username);
@@ -67,12 +69,12 @@
                 alert("Nome utente o password non validi!");
             }
         }
-    
+
         // Funzione per reindirizzare l'utente alla pagina home.html
         function redirectToHome() {
             window.location.href = "home.html";
         }
-    
+
         // Gestione della registrazione
         const registrationForm = document.getElementById("registrationForm");
         registrationForm.addEventListener("submit", function (event) {
@@ -82,7 +84,7 @@
             registerUser(username, password);
             event.target.reset();
         });
-    
+
         // Gestione del login
         const loginForm = document.getElementById("loginForm");
         loginForm.addEventListener("submit", function (event) {
@@ -93,6 +95,7 @@
             event.target.reset();
         });
     </script>
-        
+
 </body>
+
 </html>
