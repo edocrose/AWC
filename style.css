@@ -2,6 +2,11 @@ body {
     margin: 0;
     padding: 0;
     font-family: Arial, sans-serif;
+    background-image: url(immagini/sfondo.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+
 }
 
 .navbar {
@@ -113,3 +118,52 @@ body {
     padding-bottom: 10px;
     border-bottom: 2px solid black;
 }
+.lista {
+    position: absolute;
+    width: 64%;
+    background-color: #555;
+    color: #ffffff;
+    z-index: 1;
+  }
+
+  /* Stile base del pulsante a tendina */
+.dropbtn {
+    color: white;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+  }
+
+  /* Contenitore del menu a tendina */
+.dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  
+  /* Contenuto del menu a tendina (nascosto) */
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+  
+  /* Link all'interno del menu a tendina */
+  .dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+  
+  /* Cambia il colore del link quando ci passi sopra con il mouse */
+  .dropdown-content a:hover {
+    background-color: #f1f1f1;
+  }
+  
+  /* Mostra il contenuto del menu a tendina quando passi sopra il pulsante */
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }

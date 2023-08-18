@@ -1,0 +1,53 @@
+<html>
+
+<head>
+    <title>Marvel figure</title>
+    <link rel="icon" href="immagini/marvel_icona.webp" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="dati_utente.css">
+    
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="navbar-left">
+            <a href="#"> <img src="immagini/marvel_icona.webp" alt="icona a sinistra"></a>
+        </div>
+        <center>
+            <div class="search-bar">
+                <input type="text" id="searchInput" placeholder="Cerca...">
+                <button id="searchButton">Cerca</button>
+            </div>
+        </center>
+        <div class="navbar-right">
+            <div class="dropdown">
+                <button class="dropbtn"><a href="#" id="userIcon"><img src="immagini/icona_utente.jpeg" alt="icona a destra"></a></button>
+                <div class="dropdown-content">
+                  <a href="dati_utente.html">Dati utente</a>
+                  <a href="login_registrazione/login.html">Logout</a>
+                </div>
+              </div>
+        </div>
+    </nav>
+    <div class="form_modifica">
+        <h1>Modifica Dati Personali</h1>
+        <form class="edit-form">
+          <br>
+          <label for="name">Nome Utente:</label>
+          <input type="text" id="name" name="name" placeholder="Inserisci il tuo nome">
+          <br>
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" placeholder="Inserisci la tua email">
+          <br>
+          <label for="Password">Password:</label>
+          <input type="password" id="password" name="password">
+          <br>
+          <label for="superhero">Supereroe preferito:</label>
+          <input type="text" id="superhero" name="superhero">
+          <br>
+          <button type="submit" class="modifica">Salva Modifiche</button>
+          <button type="submit" class="Elimina">Elimina Account</button>
+        </form>
+      </div>
+</body>
+</html>
