@@ -14,16 +14,26 @@ body {
     justify-content: space-between;
     align-items: center;
     background-color: red;
-    padding: 10px;
+    padding: 10px 20px;
 }
 
-.navbar-left,
+.logo {
+    align-items: center;
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    margin-right: 270px ;
+}
+
+.logo img {
+    width: 150px;
+    height: 150px;
+}
 .navbar-right {
     display: flex;
     align-items: center;
 }
 
-.navbar-left img,
 .navbar-right img {
     width: 70px;
     height: 70px;
@@ -35,6 +45,34 @@ body {
     width: 70px;
     height: 70px;
     margin: 0 10px;
+}
+
+.menu ul{
+    margin: 0;
+    padding: 0;
+    display: flex;
+    z-index: 1;
+    transition: 0.5s;
+    padding: -50px;
+}
+
+.menu li {
+    list-style-type: none;
+} 
+
+.menu li a {
+    color: black;
+    text-decoration: none;
+    display: block;
+    padding: 5px 20px ;
+    font-size: 16px;
+    line-height: 1;
+    transition: 0.3s;
+}
+
+.menu li a:hover {
+    box-shadow: 0 -5px 0px black inset, 500px 0 0 rgb(30,30,30, 0.03) inset;
+    padding: 35px 25px 45px 25px;
 }
 
 .hidden {
@@ -52,31 +90,6 @@ body {
     font-family: Arial, sans-serif;
 }
 
-.search-bar {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 85px;
-}
-
-#searchInput {
-    padding: 10px;
-    font-size: 16px;
-    border: 1px solid #ccc;
-    border-radius: 5px 0 0 5px;
-    width: 70%;
-}
-
-#searchButton {
-    padding: 10px 20px;
-    background-color: #3498db;
-    color: white;
-    border: none;
-    border-radius: 0 5px 5px 0;
-    cursor: pointer;
-    font-size: 16px;
-}
-
 .box-form {
     background-color: #fff;
     justify-content: space-around;
@@ -86,19 +99,21 @@ body {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
     text-align: justify;
 }
+
 .registration-box {
     background-color: #fff;
-        border-radius: 10px;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-        padding: 20px;
-        text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    padding: 20px;
+    text-align: center;
 }
+
 .login-box {
     background-color: #fff;
-        border-radius: 10px;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-        padding: 20px;
-        text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    padding: 20px;
+    text-align: center;
 }
 
 .registration-box h1 {
@@ -118,52 +133,53 @@ body {
     padding-bottom: 10px;
     border-bottom: 2px solid black;
 }
+
 .lista {
     position: absolute;
     width: 64%;
     background-color: #555;
     color: #ffffff;
     z-index: 1;
-  }
+}
 
-  /* Stile base del pulsante a tendina */
+/* Stile base del pulsante a tendina */
 .dropbtn {
     color: white;
     font-size: 16px;
     border: none;
     cursor: pointer;
-  }
+}
 
-  /* Contenitore del menu a tendina */
+/* Contenitore del menu a tendina */
 .dropdown {
     position: relative;
     display: inline-block;
-  }
-  
-  /* Contenuto del menu a tendina (nascosto) */
-  .dropdown-content {
+}
+
+/* Contenuto del menu a tendina (nascosto) */
+.dropdown-content {
     display: none;
     position: absolute;
     background-color: #f9f9f9;
     min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
     z-index: 1;
-  }
-  
-  /* Link all'interno del menu a tendina */
-  .dropdown-content a {
+}
+
+/* Link all'interno del menu a tendina */
+.dropdown-content a {
     color: black;
     padding: 12px 16px;
     text-decoration: none;
     display: block;
-  }
-  
-  /* Cambia il colore del link quando ci passi sopra con il mouse */
-  .dropdown-content a:hover {
+}
+
+/* Cambia il colore del link quando ci passi sopra con il mouse */
+.dropdown-content a:hover {
     background-color: #f1f1f1;
-  }
-  
-  /* Mostra il contenuto del menu a tendina quando passi sopra il pulsante */
-  .dropdown:hover .dropdown-content {
+}
+
+/* Mostra il contenuto del menu a tendina quando passi sopra il pulsante */
+.dropdown:hover .dropdown-content {
     display: block;
-  }
+}
