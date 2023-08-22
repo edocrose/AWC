@@ -10,3 +10,7 @@ COSE DA FARE:
 Logo -> spostato al centro
 Menu hamburger -> Compra pacchetti, Scambio figurine, (guardare se mettere compra figurine) [FATTO!]
 Utente -> cliccando c'è l'opzione Esci, informazioni utente (dentro c'è l'opzione modifica o cancella account)
+       -> Dati utente [FATTO]
+       -> Logout
+       -> Modifica dati
+       -> Cancella Account
