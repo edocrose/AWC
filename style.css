@@ -8,7 +8,7 @@ body {
     background-position: center center;
 
 }
-
+/*da qui inizia il css per il nav delle pagine*/
 .navbar {
     display: flex;
     justify-content: space-between;
@@ -60,6 +60,7 @@ body {
     list-style-type: none;
 } 
 
+
 .menu li a {
     color: black;
     text-decoration: none;
@@ -70,10 +71,16 @@ body {
     transition: 0.3s;
 }
 
+.menu li a.current-page {
+    color: gray;
+    pointer-events: none;
+}
+
 .menu li a:hover {
     box-shadow: 0 -5px 0px black inset, 500px 0 0 rgb(30,30,30, 0.03) inset;
     padding: 35px 25px 45px 25px;
 }
+
 
 .hidden {
     display: none;
@@ -83,6 +90,7 @@ body {
     margin: 10px;
     color: aqua;
 }
+
 
 body {
     margin: 0;
@@ -182,4 +190,86 @@ body {
 /* Mostra il contenuto del menu a tendina quando passi sopra il pulsante */
 .dropdown:hover .dropdown-content {
     display: block;
+}
+/*da qui inizia il css per il acquista pacchetti*/
+.content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.content h1 {
+    text-align: center;
+    color: white;
+}
+
+.pacchetto {
+    width: 200px;
+    height: 350px;
+    margin: 20px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.image-container img {
+    max-width: 110%;
+    max-height: 100%;
+}
+
+.image-container {
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.descrizione {
+    text-align: center;
+}
+
+.descrizione button {
+    top: -70px;
+    margin-top: 5px;
+    padding: 10px 20px;
+    background-color: #3498db;
+    color: rgb(255, 255, 255);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.descrizione h2 {
+    color: white;
+
+}
+
+.descrizione button:hover {
+    background-color: #2980b9;
+}
+
+.minus,
+.plus {
+    font-size: 10px;
+    background-color: #ccc;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+.quantity {
+    color: white;
+    margin: 0 10px;
+    font-size: 18px;
+}
+
+.descrizione h3 {
+    color: white;
 }
