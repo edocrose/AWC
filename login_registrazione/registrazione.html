@@ -4,23 +4,32 @@
     <title>Marvel figure</title>
     <link rel="icon" href="../immagini/marvel_icona.webp" type="image/x-icon">
     <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="log_reg.css">
 </head>
 
 <body>
     <nav class="navbar">
-        <div class="navbar-left">
-            <a href="#"> <img src="../immagini/marvel_icona.webp" alt="icona a sinistra"></a>
+        <div class="menu">
+          <ul>
+            <li><a href="#" onclick="getDataHome()">Home</a></li>
+            <li><a href="#">Compra pacchetti</a></li>
+            <li><a href="#">Scambia</a></li>
+          </ul>
         </div>
-        <center>
-            <div class="search-bar">
-                <input type="text" id="searchInput" placeholder="Cerca...">
-                <button id="searchButton">Cerca</button>
-            </div>
-        </center>
+          <div class="logo">
+            <img src="../immagini/marvel_icona.webp" alt="icona a sinistra" onclick="getDataHome()">
+          </div>
         <div class="navbar-right">
-            <a href="#" id="userIcon"><img src="../immagini/icona_utente.jpeg" alt="icona a destra"></a>
+          <div class="dropdown">
+            <button class="dropbtn"><a href="#" id="userIcon"><img src="../immagini/icona_utente.jpeg"
+                  alt="icona a destra"></a></button>
+            <div class="dropdown-content">
+              <a href="#" onclick="getDataLogin()">Dati utente</a>
+              <a href="login.html">Logout</a>
+            </div>
+          </div>
         </div>
-    </nav>
+      </nav>
     <div class="box-form">
         <div class="registration-box">
             <h1>Registrazione</h1>
@@ -45,6 +54,8 @@
                 <div>
                     <button type="submit">Registrati</button>
                 </div>
+                <br>
+                <h5>Sei già registrato? <a href="login.html">Accedi</a></h5>
         </div>
         </form>
     </div>
@@ -52,6 +63,7 @@
         <script src="api-data.js"></script>
         <script src="supereroe_preferito.js"></script>
         <script src="registrazione.js"></script>
+        <script src="../get_data.js"></script>
 </body>
 
 </html>

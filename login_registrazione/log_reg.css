@@ -18,7 +18,7 @@ body {
   
   h1 {
     text-align: center;
-    color: azure;
+    color: black;
   }
   
   .edit-form {
@@ -28,13 +28,13 @@ body {
   
   label {
     margin-top: 10px;
-    color: azure;
+    color: black;
   }
   
   input {
     padding: 10px;
     margin-top: 5px;
-    border: 1px solid #ccc;
+    border: 1px solid black;
     border-radius: 5px;
   }
   
@@ -51,40 +51,3 @@ body {
   button:hover {
     background-color: #2980b9;
   } 
-
-  .link-button {
-    display: inline-block;
-    padding: 10px 20px;
-    margin-top: 30px;
-    
-    color: white;
-    text-align: center;
-    text-decoration: none;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-
-  #modifica{
-    background-color: #27c010;
-  }
-
-  #modifica:hover {
-    background-color: #177712;
-  }
-
-  #annulla{
-    background-color: #d71b1b;
-  }
-
-  #annulla:hover {
-    background-color: #741414;
-  }
-
-  #mod{
-    background-color: #3d7ad7;
-  }
-
-  #mod:hover {
-    background-color: #124577;
-  }
