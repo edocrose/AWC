@@ -7,7 +7,8 @@ function getData(){
     const email = urlParams.get("email");
     const password = urlParams.get("password");
     const superhero = urlParams.get("superhero");
-    window.location.href = "login_registrazione/dati_utente.html?username="+username+"&email="+email+"&password="+password+"&superhero="+superhero;
+    const credits = urlParams.get("credits");
+    window.location.href = "login_registrazione/dati_utente.html?username="+username+"&email="+email+"&password="+password+"&superhero="+superhero+"&credits="+credits;
 }
 
 //funzione che riporta ai dati utente mantenendo i dati di login
@@ -19,7 +20,8 @@ function getDataLogin(){
     const email = urlParams.get("email");
     const password = urlParams.get("password");
     const superhero = urlParams.get("superhero");
-    window.location.href = "dati_utente.html?username="+username+"&email="+email+"&password="+password+"&superhero="+superhero;
+    const credits = urlParams.get("credits");
+    window.location.href = "dati_utente.html?username="+username+"&email="+email+"&password="+password+"&superhero="+superhero+"&credits="+credits;
 }
 
 //funzione che riporta alla home mantenendo i dati di login
@@ -30,7 +32,31 @@ function getDataHome(){
     const email = urlParams.get("email");
     const password = urlParams.get("password");
     const superhero = urlParams.get("superhero");
-    window.location.href = "../home.html?username="+username+"&email="+email+"&password="+password+"&superhero="+superhero;
+    const credits = urlParams.get("credits");
+    window.location.href = "../home.html?username="+username+"&email="+email+"&password="+password+"&superhero="+superhero+"&credits="+credits;
+}
+
+function getDataHome2(){
+    const urlParams = new URLSearchParams(window.location.search);
+    
+    const username = urlParams.get("username");
+    const email = urlParams.get("email");
+    const password = urlParams.get("password");
+    const superhero = urlParams.get("superhero");
+    const credits = urlParams.get("credits");
+    window.location.href = "home.html?username="+username+"&email="+email+"&password="+password+"&superhero="+superhero+"&credits="+credits;
+}
+
+
+function getDataNegozio(){
+    const urlParams = new URLSearchParams(window.location.search);
+    
+    const username = urlParams.get("username");
+    const email = urlParams.get("email");
+    const password = urlParams.get("password");
+    const superhero = urlParams.get("superhero");
+    const credits = urlParams.get("credits");
+    window.location.href = "negozio.html?username="+username+"&email="+email+"&password="+password+"&superhero="+superhero+"&credits="+credits;
 }
 
 

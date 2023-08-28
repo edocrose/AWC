@@ -3,7 +3,7 @@ function redirectToHome() {
     var user = localStorage.getItem(username);
     var data = JSON.parse(user);
 
-    window.location.href = "../home.html?username="+data.username+"&email="+data.email+"&password="+data.password+"&superhero="+data.superhero;
+    window.location.href = "../home.html?username="+data.username+"&email="+data.email+"&password="+data.password+"&superhero="+data.superhero+"&credits="+data.credits;
 }
 
 function loginFunc(e){

@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", function () {
         const priceSpan = pacchetto.querySelector(".price");
 
         let quantity = 1;
-        const basePrice = 5; // Cambia questo valore al prezzo base del pacchetto
+        const basePrice = 1; // Cambia questo valore al prezzo base del pacchetto
 
         minusButton.addEventListener("click", function () {
             if (quantity > 1) {
@@ -28,5 +28,7 @@ document.addEventListener("DOMContentLoaded", function () {
             const totalPrice = basePrice * quantity;
             priceSpan.textContent = totalPrice;
         }
+
+
     });
 });
