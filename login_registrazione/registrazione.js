@@ -1,9 +1,25 @@
 function redirectToHome() {
-    var username = document.getElementById('username').value;
-    var user = localStorage.getItem(username);
-    var data = JSON.parse(user);
 
-    window.location.href = "../home.html?username="+data.username+"&email="+data.email+"&password="+data.password+"&superhero="+data.superhero+"&credits="+data.credits;
+    var username = document.getElementById('username').value;
+    console.log(username);
+    var utenti = localStorage.getItem('utenti');
+    console.log(utenti);
+    var json = JSON.parse(utenti);
+    var data = json[json.length - 1];
+
+    window.location.href = "../home.html?username="+data.username;
+}
+
+function caricaUtenti() {
+    var utenti = []
+
+    if (window.localStorage.getItem('utenti') != null) {
+        utenti = JSON.parse(
+            window.localStorage.getItem('utenti')
+        )
+    }
+
+    return utenti
 }
 
 function signup(e){
@@ -22,11 +38,29 @@ function signup(e){
         credits: 10,
     };
 
-    var json = JSON.stringify(user);
-    localStorage.setItem(username, json);
+    var utenti = caricaUtenti()
+
+    if (!controllaEsistenza(user, utenti)) {
+        utenti.push(user)
+    } else {
+        alert("Utente già esistente")
+    }
+
+    console.table(utenti)
+    window.localStorage.setItem('utenti', JSON.stringify(utenti))
     console.log('user added');
     alert("Registrazione avvenuta con successo!");
     redirectToHome();
+}
+
+function controllaEsistenza(newUtente, utenti) {
+    var risultato = utenti.find(user => user.username == newUtente.username)
+
+    if (risultato != undefined) {
+        return true
+    } else {
+        return false
+    }
 }
 
 // Gestione della registrazione

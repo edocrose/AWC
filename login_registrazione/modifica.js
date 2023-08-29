@@ -1,10 +1,15 @@
 const urlParams = new URLSearchParams(window.location.search);
     
     const username = urlParams.get("username");
-    const email = urlParams.get("email");
-    const password = urlParams.get("password");
-    const superhero = urlParams.get("superhero");
-    const credits = urlParams.get("credits");
+    var utenti = localStorage.getItem('utenti');
+    var json = JSON.parse(utenti);
+    var data = null;
+    for(var i = 0; i < json.length; i++){
+        if(json[i].username == username){
+            data = json[i];
+            break;
+        }
+    }
 
 
 const usernameElement = document.getElementById('username');
@@ -14,29 +19,34 @@ const superheroElement = document.getElementById('superhero');
 const creditsElement = document.getElementById('credits');
 
 usernameElement.value=username;
-emailElement.value=email;
-passwordElement.value=password;
-superheroElement.value=superhero;
-creditsElement.value=credits;
+emailElement.value=data.email;
+passwordElement.value=data.password;
+superheroElement.value=data.superhero;
+creditsElement.value=data.credits;
 
 function modifica(e){
     event.preventDefault();
 
-    var username = document.getElementById('username').value;
-    var email = document.getElementById('email').value;
-    var password = document.getElementById('password').value;
-    var superhero = document.getElementById('superhero').value;
+    var usernameMod = document.getElementById('username').value;
+    var emailMod = document.getElementById('email').value;
+    var passwordMod = document.getElementById('password').value;
+    var superheroMod = document.getElementById('superhero').value;
 
-    var user = {
-        username: username,
-        email: email,
-        password: password,
-        superhero: superhero,
-        credits: credits,
-    };
-    var json = JSON.stringify(user);
-    localStorage.removeItem(urlParams.get("username"));
-    localStorage.setItem(username, json);
+
+    var utenti = localStorage.getItem('utenti');
+    var json = JSON.parse(utenti);
+    for(var i = 0; i < json.length; i++){
+        if(json[i].username == username){
+            json[i].username = usernameMod;
+            json[i].email = emailMod;
+            json[i].password = passwordMod;
+            json[i].superhero = superheroMod;
+            break;
+        }
+    }
+
+    var mod = JSON.stringify(json);
+    localStorage.setItem('utenti', mod);
     redirectToHome();
 }
 
@@ -55,8 +65,6 @@ function compraPacchetto(){
 
 function redirectToHome() {
     var username = document.getElementById('username').value;
-    var user = localStorage.getItem(username);
-    var data = JSON.parse(user);
 
-    window.location.href = "../home.html?username="+data.username+"&email="+data.email+"&password="+data.password+"&superhero="+data.superhero+"&credits="+data.credits;
+    window.location.href = "../home.html?username="+username;
 }
