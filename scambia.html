@@ -12,8 +12,8 @@
     <nav class="navbar">
         <div class="menu">
             <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Negozio</a></li>
+                <li><a href="#" onclick="getDataHome()">Home</a></li>
+                <li><a href="#" onclick="getDataNegozio()">Negozio</a></li>
                 <li><a href="#" class="current-page">Scambia</a></li>
             </ul>
         </div>
@@ -31,8 +31,24 @@
             </div>
         </div>
     </nav>
-    <div>
-        <h1>Carte</h1>
+    <div class="richiesta-scambio">
+        <h1>Scambia i tuoi doppioni</h1>
+
+        <form class="FormScambio">
+            <div>
+                <label for="superheroExchange">Supereroe richiesto:</label>
+                <input type="text" id="superheroExchange" name="superheroExchange" required>
+            </div>
+            <br>
+            <div class="listaScambio"></div>
+            <br>
+            <div>
+                <button type="submit" class="ButtonScambio">Invia richiesta</button>
+            </div>
+        </form>
+        <br>
+        <h1>I tuoi doppioni:</h1>
+
         <div class="container-cards">
             <div class="character-card">
                 <img src="https://cdn.marvel.com/content/1x/005smp_com_crd_01.jpg" alt="immagine carta 1">
@@ -50,6 +66,8 @@
 
     </div>
 </body>
-<script src="lib.js"></script>
-<script src="ordina_carte.js"></script>
+<script src="login_registrazione/api-data.js"></script>
+<script src="get_data.js"></script>
+<script src="supereroeExchange.js"></script>
+
 </html>
