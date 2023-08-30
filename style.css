@@ -273,3 +273,35 @@ body {
 .descrizione h3 {
     color: white;
 }
+
+.richiesta-scambio h1{
+    color: white;
+    text-align: center;
+}
+
+.FormScambio {
+    color: white;
+    text-align: center;
+}
+
+.ButtonScambio {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #2980b9;
+  } 
+
+  .listaScambio{
+    background-color:red;
+    margin-left: 35%;
+    width: 30%;
+    color: white;
+    border-radius: 20px;
+  }
