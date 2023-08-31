@@ -274,7 +274,37 @@ body {
     color: white;
 }
 
-.richiesta-scambio h1{
+/*da qui inizia il css per i crediti*/
+.credits {
+    color: white;
+    text-align: center;
+    margin-top: 20px;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.credits h2 {
+    margin-bottom: 10px;
+}
+
+.credits button {
+    top: -70px;
+    margin-top: 5px;
+    padding: 10px 20px;
+    background-color: #3498db;
+    color: rgb(255, 255, 255);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.total-price {
+    font-size: 16px;
+}
+
+/*inizia il css per lo scambia figurine*/
+.richiesta-scambio h1 {
     color: white;
     text-align: center;
 }
@@ -292,16 +322,16 @@ body {
     border: none;
     border-radius: 5px;
     cursor: pointer;
-  }
-  
-  button:hover {
-    background-color: #2980b9;
-  } 
+}
 
-  .listaScambio{
-    background-color:red;
+button:hover {
+    background-color: #2980b9;
+}
+
+.listaScambio {
+    background-color: red;
     margin-left: 35%;
     width: 30%;
     color: white;
     border-radius: 20px;
-  }
+}
