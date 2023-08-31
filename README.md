@@ -6,14 +6,9 @@
 4 - Bisogna chiedere se nello scambio di figurine serve interazione tra due utenti o è solo una proposta.
 
 COSE DA FARE:
-- sistemare la navbar
-Logo -> spostato al centro
-Menu hamburger -> Compra pacchetti, Scambio figurine, (guardare se mettere compra figurine) [FATTO!]
-Utente -> cliccando c'è l'opzione Esci, informazioni utente (dentro c'è l'opzione modifica o cancella account)
-       -> Dati utente [FATTO]
-       -> Logout [FATTO]
-       -> Modifica dati [FATTO]
-       -> Cancella Account [FATTO]
+Logo -> spostato al centro DA RIVEDERE
 
-
--> DA CONTROLLARE PERCHE' NON FUNZIONANO I BUTTON MA SOLO I LINK
+VENERDI 1/09
+AGGIUNGERE NELLA PAGINA DEL PACCHETTO I TASTI: ACQUISTANE ALTRI E TORNA ALLA HOME
+MODIFICARE ACQUISTA -> L'UTENTE PUO' COMPRARE SOLO UN PACCHETTO ALLA VOLTA
+NELLA HOME METTERE TUTTE LE CARTE DELL'UTENTE
