@@ -96,21 +96,24 @@ document.addEventListener("DOMContentLoaded", function () {
                         for(let i=0; i<data.length; i++){
                             lista.push(data[i]);
                         }
-                        
+                        var pack = [];
                         for(let i=0; i<5; i++){
                             var card = lista[random(0,99)];
                             if (controllaDoppie(user.carte, card)){
                                 user.doppie.push(card);
                             }
                             user.carte.push(card);
+                            pack.push(card);
                         }
                         break;
                     }
                 }
-
+                var pacchetto = JSON.stringify(pack);
+                localStorage.setItem("pacchetto", pacchetto);
                 var mod = JSON.stringify(json);
                 localStorage.setItem('utenti', mod);
                 alert("Punti rimanenti: "+ user.credits);
+                window.location.href = "pacchetto.html?username="+username;
             } else {
                 console.log("Punti insufficienti per l'acquisto")
             }
