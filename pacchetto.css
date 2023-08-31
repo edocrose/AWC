@@ -5,13 +5,13 @@ body {
 
 :root {
 	--cards: 5;
-	--cardHeight: 87vh;
+	--cardHeight: 64vh;
 	--cardTopPadding: 1.5em;
 	--cardMargin: 4vw;
 }
 
 .container {
-	width: 90%;
+	width: 35%;
 	margin: 0 auto;
 }
 
@@ -30,29 +30,35 @@ body {
 	--index: 1;
 }
 #card2 {
-	--index: 2;
+	--index: 1;
 }
 #card3 {
-	--index: 3;
+	--index: 1;
 }
 #card4 {
-	--index: 4;
+	--index: 1;
 }
 #card5 {
-	--index: 5;
+	--index: 1;
 }
 
 .card {
 	position: sticky;
 	top: 0;
 	padding-top: calc(var(--index) * var(--cardTopPadding));
+	background-color: black;
+    border-radius: 50px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    margin: 10px;
+    max-width: 600px;
 }
-
+/*
 #card1 .card-body {
 	background-color: #52B2CF;
 }
 #card2 .card-body {
-	/* background-color: #7EC4CF; */
+	background-color: #7EC4CF; 
 	background-color: #E5A36F;
 }
 #card3 .card-body {
@@ -64,24 +70,42 @@ body {
 #card5 .card-body {
 	background-color: #be0e3d;
 }
-
+*/
 .card-body {
 	box-sizing: border-box;
-	padding: 30px;
+	padding: 40px;
 	border-radius: 50px;
-	box-shadow: 0 0 30px 0 rgba(0,0,0,0.3);
 	height: var(--cardHeight);
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	flex-direction: column;
 	transition: all 0.5s;
 }
 
 .card img{
-    width: 500px;
-    height: 500px;
+    width: 300px;
+    height: 300px;
+}
+
+.card h2{
+	margin: 0;
+    padding: 5px;
+    font-size: 24px;
+    color: #3498db;
 }
 
 h2 {
 	font-size: 2.5em;
 }
+
+.card a {
+    color: white;
+    font-size: 16px;
+}
+
+.learnMoreButton {
+	display: block; /* Rende il link un blocco */
+	margin-top: 10px; /* Aggiunge uno spazio tra il div e il link */
+  }
+

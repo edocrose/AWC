@@ -1,11 +1,11 @@
-.container-cards {
+#carta {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
 }
 
 
-.character-card {
+#character-card {
     background-color: black;
     border-radius: 10px 0px 10px 0px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
@@ -15,20 +15,20 @@
     max-width: 150px;
 }
 
-.character-card img {
+#character-card img {
     max-width: 100%;
     border-radius: 5px;
     margin-bottom: 10px;
 }
 
-.character-card h2 {
+#character-card h2 {
     margin: 0;
     padding: 5px;
     font-size: 24px;
     color: #3498db;
 }
 
-.character-card a {
+#character-card a {
     color: white;
     font-size: 16px;
 }

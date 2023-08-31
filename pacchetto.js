@@ -6,6 +6,7 @@ const imageElement1 = document.createElement("img");
 imageElement1.src = pack[0].thumbnail.path+"."+pack[0].thumbnail.extension;
 const nameElement1 = document.createElement("h2");
 nameElement1.textContent = pack[0].name;
+
 // Aggiungi gli elementi alla pagina dei dettagli
 i1.appendChild(imageElement1);
 i1.appendChild(nameElement1);
@@ -49,3 +50,17 @@ nameElement5.textContent = pack[4].name;
 // Aggiungi gli elementi alla pagina dei dettagli
 i5.appendChild(imageElement5);
 i5.appendChild(nameElement5);
+
+function redirectHome(){
+    localStorage.removeItem('pacchetto');
+    const urlParams = new URLSearchParams(window.location.search);
+    const username = urlParams.get("username");
+    window.location.href = "home.html?username="+username;
+}
+
+function redirectNegozio(){
+    localStorage.removeItem('pacchetto');
+    const urlParams = new URLSearchParams(window.location.search);
+    const username = urlParams.get("username");
+    window.location.href = "negozio.html?username="+username;
+}
