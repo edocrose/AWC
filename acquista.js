@@ -1,3 +1,16 @@
+const [timestamp, apiKey, hashValue] = [ts, publicKey, hashVal];
+
+function random(min, max){
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+function trovaUtenti(){
+    var utenti = localStorage.getItem('utenti');
+    var json = JSON.parse(utenti);
+    return json;
+    
+}
+
 function trovaUtente() {
     const urlParams = new URLSearchParams(window.location.search);
 
@@ -13,6 +26,15 @@ function trovaUtente() {
     }
 
     return data;
+}
+
+function controllaDoppie(mazzo, card){
+    for(let i=0; i<mazzo.length; i++){
+        if(card == mazzo[i]){
+            return true;
+        }
+    }
+    return false;
 }
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -50,27 +72,49 @@ document.addEventListener("DOMContentLoaded", function () {
         }
 
         //funzione acquista
-        acquistaButton.addEventListener("click", function(){
+        acquistaButton.addEventListener("click", async () =>{
             const packPrice = updatePrice();
             if (utente.credits >= packPrice) {
                 const urlParams = new URLSearchParams(window.location.search);
                 const username = urlParams.get("username");
                 var utenti = localStorage.getItem('utenti');
                 var json = JSON.parse(utenti);
-                var data = null;
+                var user = null;
                 for (var i = 0; i < json.length; i++) {
                     if (json[i].username == username) {
+                        //PARTE PER CREDITI
                         json[i].credits -= packPrice
-                        data = json[i]
+                        user = json[i];
+                        //PARTE PER LE CARTE DEL PACK
+                        var offset = random(0, 1462);
+                        var limit = 100;
+                        const url = `https://gateway.marvel.com:443/v1/public/characters?ts=${timestamp}&apikey=${apiKey}&hash=${hashValue}&limit=${limit}&offset=${offset}`;
+                        var lista = [];
+                        const response = await fetch(url);
+                        const jsonData = await response.json();
+                        var data = jsonData.data.results;
+                        for(let i=0; i<data.length; i++){
+                            lista.push(data[i]);
+                        }
+                        
+                        for(let i=0; i<5; i++){
+                            var card = lista[random(0,99)];
+                            if (controllaDoppie(user.carte, card)){
+                                user.doppie.push(card);
+                            }
+                            user.carte.push(card);
+                        }
                         break;
                     }
                 }
+
                 var mod = JSON.stringify(json);
                 localStorage.setItem('utenti', mod);
-                alert("Punti rimanenti: "+ data.credits);
+                alert("Punti rimanenti: "+ user.credits);
             } else {
                 console.log("Punti insufficienti per l'acquisto")
             }
+            
         });
 
     });
