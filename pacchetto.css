@@ -107,5 +107,18 @@ h2 {
 .learnMoreButton {
 	display: block; /* Rende il link un blocco */
 	margin-top: 10px; /* Aggiunge uno spazio tra il div e il link */
-  }
+}
+
+div button {
+	top: -70px;
+	margin-left: 7px;
+	margin-bottom: 10px;
+	padding: 10px 20px;
+	background-color: #3498db;
+	color: rgb(255, 255, 255);
+	border: none;
+	border-radius: 7px;
+	cursor: pointer;
+	transition: background-color 0.3s;
+}
 
