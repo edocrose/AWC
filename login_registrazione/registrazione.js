@@ -36,6 +36,8 @@ function signup(e){
         password: password,
         superhero: superhero,
         credits: 10,
+        carte: [],
+        doppie: [],
     };
 
     var utenti = caricaUtenti()
