@@ -6,29 +6,13 @@ var user = null;
 for (var i = 0; i < json.length; i++) {
     if (json[i].username == username) {
         user = json[i];
-        cards(user.carte);
+        cards(user.doppie);
         break;
     }
 }
-var mod = JSON.stringify(json);
-localStorage.setItem('utenti', mod);
 
 function cards(mazzo) {
     var cardContainer = document.querySelector('.contenitore');
-    // Ordina le carte in base al nome
-    mazzo.sort(function (a, b) {
-        var nameA = a.name.toLowerCase();//converte le lettere in lettere minuscole
-        var nameB = b.name.toLowerCase();
-        if (nameA < nameB) {
-            return -1;
-        }
-        if (nameA > nameB) {
-            return 1;
-        }
-        return 0;
-    });
-
-
 
     for (var i = 0; i < mazzo.length; i++) {
         var characterCard = document.createElement('div');
@@ -37,6 +21,7 @@ function cards(mazzo) {
 
         var img = document.createElement('img');
         img.classList.add('card-img-top');
+        img.alt = '...';
         img.src = mazzo[i].thumbnail.path + "." + mazzo[i].thumbnail.extension;
 
         var h2 = document.createElement('h2');
@@ -45,7 +30,7 @@ function cards(mazzo) {
 
         var a = document.createElement('a');
         a.classList.add('btn-primary');
-        a.href = 'cartaDettagli.html?index=' + i + '&username=' + username;
+        a.href = 'scheda-supereroe.html?id=' + mazzo[i].id + '&username=' + username;
         a.innerHTML = 'Scopri di più';
 
         characterCard.appendChild(img);

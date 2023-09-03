@@ -1,9 +1,23 @@
 //nome,immagine, descrizione, comics, serie, eventi
-var json = localStorage.getItem('pacchetto')
-var pack = JSON.parse(json);
-
 const urlParams = new URLSearchParams(window.location.search);
-const index = urlParams.get("carta");
+var item = localStorage.getItem('pacchetto');
+var pack = null
+if (item == null){
+    const username = urlParams.get("username");
+    item = localStorage.getItem('utenti');
+    var json = JSON.parse(item);
+    for (var i = 0; i < json.length; i++) {
+        if (json[i].username == username) {
+            pack = json[i].carte;
+            break;
+        }
+    }
+} else {
+    var pack = JSON.parse(item);
+}
+
+
+const index = urlParams.get("index");
 const carta = pack[index];
 
 const contenuto = document.querySelector(".text")
