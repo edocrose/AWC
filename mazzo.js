@@ -6,31 +6,43 @@ var user = null;
 for (var i = 0; i < json.length; i++) {
     if (json[i].username == username) {
         user = json[i];
-        cards(user);
+        cards(user.carte);  
         break;
     }
 }
 
-function cards(user) {
+function cards(mazzo) {
     var cardContainer = document.querySelector('.contenitore');
 
-    for (var i = 0; i < user.carte.length; i++) {
+    // Ordina le carte in base al nome
+    mazzo.sort(function (a, b) {
+        var nameA = a.name.toLowerCase();//converte le lettere in lettere minuscole
+        var nameB = b.name.toLowerCase();
+        if (nameA < nameB) {
+            return -1;
+        }
+        if (nameA > nameB) {
+            return 1;
+        }
+        return 0;
+    });
+
+    for (var i = 0; i < mazzo.length; i++) {
         var characterCard = document.createElement('div');
         characterCard.id = 'character-card';
         characterCard.classList.add('badge');
 
         var img = document.createElement('img');
         img.classList.add('card-img-top');
-        img.alt = '...';
-        img.src = user.carte[i].thumbnail.path + "." + user.carte[i].thumbnail.extension;
+        img.src = mazzo[i].thumbnail.path + "." + mazzo[i].thumbnail.extension;
 
         var h2 = document.createElement('h2');
         h2.classList.add('card-title');
-        h2.innerHTML = user.carte[i].name;
+        h2.innerHTML = mazzo[i].name;
 
         var a = document.createElement('a');
         a.classList.add('btn-primary');
-        a.href = 'scheda-supereroe.html?id=' + user.carte[i].id + '&username=' + user.username;
+        a.href = 'cartaDettagli.html?id=' + mazzo[i].id + '&username=' + user.username;
         a.innerHTML = 'Scopri di più';
 
         characterCard.appendChild(img);
@@ -40,5 +52,6 @@ function cards(user) {
         cardContainer.appendChild(characterCard); // Aggiungi il div clonato come figlio del contenitore
     }
 }
+
 
 
