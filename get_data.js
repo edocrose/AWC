@@ -32,14 +32,14 @@ function getDataHome(){
     const urlParams = new URLSearchParams(window.location.search);
     
     const username = urlParams.get("username");
-    window.location.href = "../home.html?username="+username;
+    window.location.href = "home.html?username="+username;
 }
 
 function getDataHome2(){
     const urlParams = new URLSearchParams(window.location.search);
     
     const username = urlParams.get("username");
-    window.location.href = "home.html?username="+username;
+    window.location.href = "../home.html?username="+username;
 }
 
 

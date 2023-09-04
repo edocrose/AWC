@@ -15,9 +15,10 @@ localStorage.setItem('utenti', mod);
 
 function cards(mazzo) {
     var cardContainer = document.querySelector('.contenitore');
+
     // Ordina le carte in base al nome
     mazzo.sort(function (a, b) {
-        var nameA = a.name.toLowerCase();//converte le lettere in lettere minuscole
+        var nameA = a.name.toLowerCase(); // Converte le lettere in lettere minuscole
         var nameB = b.name.toLowerCase();
         if (nameA < nameB) {
             return -1;
@@ -27,8 +28,6 @@ function cards(mazzo) {
         }
         return 0;
     });
-
-
 
     for (var i = 0; i < mazzo.length; i++) {
         var characterCard = document.createElement('div');
@@ -41,7 +40,13 @@ function cards(mazzo) {
 
         var h2 = document.createElement('h2');
         h2.classList.add('card-title');
-        h2.innerHTML = mazzo[i].name;
+
+        var nameParts = mazzo[i].name.split('(');
+        h2.innerHTML = nameParts[0];
+
+        if (nameParts.length > 1) {
+            h2.innerHTML += '<br>(' + nameParts.slice(1).join('(');
+        }
 
         var a = document.createElement('a');
         a.classList.add('btn-primary');
@@ -55,5 +60,7 @@ function cards(mazzo) {
         cardContainer.appendChild(characterCard); // Aggiungi il div clonato come figlio del contenitore
     }
 }
+
+
 
 

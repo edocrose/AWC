@@ -26,7 +26,8 @@ immagine.src = carta.thumbnail.path+"."+carta.thumbnail.extension
 const nome = document.createElement("h2")
 nome.textContent = carta.name
 const descrizione = document.createElement("p")
-descrizione.textContent = carta.description
+const descriptionText = carta.description.replace(/, /g, ',<br>').replace(/\. /g, '.<br>');
+descrizione.innerHTML = descriptionText;
 
 const comics = document.querySelector(".comics")
 const ul_com = document.createElement('ul');
