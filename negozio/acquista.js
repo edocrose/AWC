@@ -30,7 +30,7 @@ function trovaUtente() {
 
 function controllaDoppie(mazzo, card){
     for(let i=0; i<mazzo.length; i++){
-        if(card == mazzo[i]){
+        if(card.id == mazzo[i].id){
             return true;
         }
     }
