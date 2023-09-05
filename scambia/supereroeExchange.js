@@ -1,8 +1,8 @@
 let input = document.getElementById("superheroExchange");
-let listContainer = document.querySelector(".listaScambio");
+let listContainer = document.querySelector(".listaRichiesta");
 
 let date = new Date();
-console.log(date.getTime());
+//console.log(date.getTime());
 
 const [timestamp, apiKey, hashValue] = [ts, publicKey, hashVal];
 
@@ -37,4 +37,65 @@ input.addEventListener("keyup", async () => {
     div.innerHTML = `<p class="item">${word}</p>`;
     listContainer.appendChild(div);
   });
+});
+
+
+//PARTE PER LA SCELTA DELLA DOPPIA DA SCAMBIARE
+let cambio = document.getElementById("superheroDouble");
+let listDoppie = document.querySelector(".listaDoppie");
+
+function displayWords2(value) {
+  cambio.value = value;
+  removeElements2();
+}
+ 
+function removeElements2() {
+  listDoppie.innerHTML = "";
+}
+
+cambio.addEventListener("keyup", async () => {
+  removeElements2();
+  if (cambio.value.length < 4) {
+    return false;
+  }
+
+  const urlParams = new URLSearchParams(window.location.search);
+  const username = urlParams.get("username");
+  var utenti = localStorage.getItem('utenti');
+  var json = JSON.parse(utenti);
+  var doppie = null;
+  for (var i = 0; i < json.length; i++) {
+      if (json[i].username == username) {
+          doppie = json[i].doppie;
+          break;
+      }
+  }
+
+  function inizioCon(element){
+    return element.name.startsWith(cambio.value);
+  }
+
+  var fill = doppie.filter(inizioCon);
+
+  for(let i=0; i<fill.length; i++){
+    let name = fill[i].name;
+
+    let div = document.createElement("div");
+    div.style.cursor = "pointer";
+    div.classList.add("autocomplete-items");
+    div.setAttribute("onclick", "displayWords2('" + name + "')");
+    let word = "<b>" + name.substr(0, cambio.value.length) + "</b>";
+    word += name.substr(cambio.value.length);
+
+    var img = document.createElement('img');
+    img.classList.add('card-img-top');
+    img.alt = '...';
+    img.src = fill[i].thumbnail.path + "." + fill[i].thumbnail.extension;
+
+    //let urlimg = fill[i].thumbnail.path+"."+fill[i].thumbnail.extension;
+    //div.innerHTML = `<img src="${urlimg} class="urlimg">`;
+    div.innerHTML = `<p class="item">${word}</p>`;
+    div.appendChild(img);
+    listDoppie.appendChild(div);
+  };
 });

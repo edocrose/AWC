@@ -58,10 +58,16 @@ function getDataNegozio2(){
 function getDataScambia(){
     const urlParams = new URLSearchParams(window.location.search);
     const username = urlParams.get("username");
-    window.location.href = "scambia/scambia.html?username="+username;
+    window.location.href = "scambia/mercato.html?username="+username;
 }
 
 function getDataScambia2(){
+    const urlParams = new URLSearchParams(window.location.search);
+    const username = urlParams.get("username");
+    window.location.href = "../scambia/mercato.html?username="+username;
+}
+
+function getDataScambia3(){
     const urlParams = new URLSearchParams(window.location.search);
     const username = urlParams.get("username");
     window.location.href = "../scambia/scambia.html?username="+username;

@@ -328,7 +328,15 @@ button:hover {
     background-color: #2980b9;
 }
 
-.listaScambio {
+.listaRichiesta {
+    background-color: red;
+    margin-left: 35%;
+    width: 30%;
+    color: white;
+    border-radius: 20px;
+}
+
+.listaDoppie {
     background-color: red;
     margin-left: 35%;
     width: 30%;

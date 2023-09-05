@@ -1,0 +1,30 @@
+/* Stile base per il link */
+.link-button {
+    display: inline-block;
+    padding: 10px 20px; /* Padding per spaziatura interna */
+    text-decoration: none; /* Rimuove il sottolineato del link */
+    font-weight: bold; /* Rende il testo in grassetto */
+    text-align: center; /* Allinea il testo al centro */
+    color: #fff; /* Colore del testo */
+    background-color: #007bff; /* Colore di sfondo */
+    border: 2px solid #007bff; /* Bordo */
+    border-radius: 5px; /* Angoli arrotondati */
+    cursor: pointer; /* Cambia il cursore al passaggio del mouse */
+  }
+  
+  /* Stile al passaggio del mouse (hover) */
+  .link-button:hover {
+    background-color: #0056b3; /* Cambia il colore di sfondo al passaggio del mouse */
+    border: 2px solid #0056b3; /* Cambia il colore del bordo al passaggio del mouse */
+  }
+  
+  /* Stile al clic (active) */
+  .link-button:active {
+    background-color: #003b80; /* Cambia il colore di sfondo al clic */
+    border: 2px solid #003b80; /* Cambia il colore del bordo al clic */
+  }
+
+.testo{
+    color: white;
+    font-size: 20px;
+}
