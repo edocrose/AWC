@@ -81,21 +81,25 @@ cambio.addEventListener("keyup", async () => {
     let name = fill[i].name;
 
     let div = document.createElement("div");
+    var img = document.createElement('img');
+    img.classList.add('list-img');
+    img.alt = '...';
+    img.src = fill[i].thumbnail.path + "." + fill[i].thumbnail.extension;
     div.style.cursor = "pointer";
     div.classList.add("autocomplete-items");
     div.setAttribute("onclick", "displayWords2('" + name + "')");
-    let word = "<b>" + name.substr(0, cambio.value.length) + "</b>";
+    //let word = "<b>" + name.substr(0, cambio.value.length) + "</b>";
+    let word = name.substr(0, cambio.value.length);
     word += name.substr(cambio.value.length);
+    var text = document.createElement("p");
+    text.classList.add('item');
+    text.textContent=word;
 
-    var img = document.createElement('img');
-    img.classList.add('card-img-top');
-    img.alt = '...';
-    img.src = fill[i].thumbnail.path + "." + fill[i].thumbnail.extension;
 
-    //let urlimg = fill[i].thumbnail.path+"."+fill[i].thumbnail.extension;
-    //div.innerHTML = `<img src="${urlimg} class="urlimg">`;
-    div.innerHTML = `<p class="item">${word}</p>`;
     div.appendChild(img);
+    div.appendChild(text);
+    //div.innerHTML = `<p class="item">${word}</p>`;
+    
     listDoppie.appendChild(div);
   };
 });
