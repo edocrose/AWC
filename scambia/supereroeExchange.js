@@ -29,12 +29,23 @@ input.addEventListener("keyup", async () => {
   jsonData.data["results"].forEach((result) => {
     let name = result.name;
     let div = document.createElement("div");
+    var img = document.createElement('img');
+    img.classList.add('list-img');
+    img.alt = '...';
+    img.src = result.thumbnail.path + "." + result.thumbnail.extension;
     div.style.cursor = "pointer";
     div.classList.add("autocomplete-items");
     div.setAttribute("onclick", "displayWords('" + name + "')");
-    let word = "<b>" + name.substr(0, input.value.length) + "</b>";
+    let word = name.substr(0, input.value.length);
     word += name.substr(input.value.length);
-    div.innerHTML = `<p class="item">${word}</p>`;
+    //div.innerHTML = `<p class="item">${word}</p>`;
+    var text = document.createElement("p");
+    text.classList.add('item');
+    text.textContent=word;
+
+
+    div.appendChild(img);
+    div.appendChild(text);
     listContainer.appendChild(div);
   });
 });
@@ -72,7 +83,8 @@ cambio.addEventListener("keyup", async () => {
   }
 
   function inizioCon(element){
-    return element.name.startsWith(cambio.value);
+    var input = cambio.value.charAt(0).toUpperCase() + cambio.value.slice(1);
+    return element.name.startsWith(input);
   }
 
   var fill = doppie.filter(inizioCon);
@@ -102,4 +114,87 @@ cambio.addEventListener("keyup", async () => {
     
     listDoppie.appendChild(div);
   };
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+//QUANDO SCHIACCIA IL BOTTONE SCAMBIO
+function redirect(user) {
+  window.location.href = "mercato.html?username="+user;
+}
+
+function caricaScambi() {
+  var scambi = []
+
+  if (window.localStorage.getItem('scambi') != null) {
+      scambi = JSON.parse(
+          window.localStorage.getItem('scambi')
+      )
+  }
+
+  return scambi
+}
+
+function scambia(e){
+  event.preventDefault();
+
+  var cartaRichiesta = document.getElementById('superheroExchange').value;
+  var cartaCeduta = document.getElementById('superheroDouble').value;
+  const urlParams = new URLSearchParams(window.location.search);
+  var utenteRichiedente = urlParams.get("username");
+  var utenteAccetta = null;
+
+  var scambio = {
+      cartaRichiesta: cartaRichiesta,
+      cartaCeduta: cartaCeduta,
+      utenteRichiedente: utenteRichiedente,
+      utenteAccetta: utenteAccetta,
+  };
+
+  console.log(scambio);
+  
+
+  var scambi = caricaScambi();
+  console.log(scambi);
+  var result = controllaScambio(scambio, scambi)
+  console.log(result);
+
+  if (controllaScambio(scambio, scambi)) {
+      scambi.push(scambio)
+  } else {
+      alert("Scambio già esistente")
+  }
+
+  console.table(scambi)
+  window.localStorage.setItem('scambi', JSON.stringify(scambi))
+  console.log('change added');
+  alert("Scambio inserito con successo!");
+  redirect(utenteRichiedente);
+}
+
+function controllaScambio(newScambio, scambi) {
+  for(let i=0; i<scambi.length; i++){
+    if(newScambio.cartaRichiesta == scambi[i].cartaRichiesta && newScambio.cartaCeduta == scambi[i].cartaCeduta && newScambio.utenteRichiedente == scambi[i].utenteRichiedente){
+      return false;
+    }
+  }
+  return true;
+}
+
+
+const formScambio = document.getElementById("FormScambio");
+formScambio.addEventListener("submit", function (event) {
+  event.preventDefault();
+  scambia();
+  event.target.reset();
 });

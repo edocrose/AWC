@@ -99,7 +99,6 @@ body {
 }
 
 .box-form {
-    background-color: #fff;
     justify-content: space-around;
     display: flex;
     padding: 20px;
@@ -109,7 +108,7 @@ body {
 }
 
 .registration-box {
-    background-color: #fff;
+    background-color: #a27676;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
     padding: 20px;
@@ -301,45 +300,4 @@ body {
 
 .total-price {
     font-size: 16px;
-}
-
-/*inizia il css per lo scambia figurine*/
-.richiesta-scambio h1 {
-    color: white;
-    text-align: center;
-}
-
-.FormScambio {
-    color: white;
-    text-align: center;
-}
-
-.ButtonScambio {
-    margin-top: 20px;
-    padding: 10px 20px;
-    background-color: #3498db;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-button:hover {
-    background-color: #2980b9;
-}
-
-.listaRichiesta {
-    background-color: red;
-    margin-left: 35%;
-    width: 30%;
-    color: white;
-    border-radius: 20px;
-}
-
-.listaDoppie {
-    background-color: red;
-    margin-left: 35%;
-    width: 30%;
-    color: white;
-    border-radius: 20px;
 }
