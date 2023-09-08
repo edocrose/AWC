@@ -22,6 +22,19 @@ function caricaUtenti() {
     return utenti
 }
 
+// Funzione per convalidare una mail utilizzando una regex
+function validaEmail(email) {
+    const emailRegex = /^[A-Za-z0-9._%-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}$/;
+    return emailRegex.test(email);
+}
+
+// Funzione per convalidare una password utilizzando una regex
+function validaPassword(password) {
+    // La password deve contenere almeno 8 caratteri, almeno una lettera maiuscola, almeno una lettera minuscola e almeno un numero.
+    const regexPassword = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}$/;
+    return regexPassword.test(password);
+}
+
 function signup(e){
     event.preventDefault();
 
@@ -42,27 +55,38 @@ function signup(e){
 
     var utenti = caricaUtenti()
 
-    if (!controllaEsistenza(user, utenti)) {
-        utenti.push(user)
-    } else {
-        alert("Utente già esistente")
+    switch(true){
+        case !validaEmail(email):
+            alert("Inserisci un indirizzo e-mail corretto");
+            break;
+        case !validaPassword(password):
+            alert("La password deve avere almeno 8 caratteri con almeno 1 maiuscola, 1 minuscola e 1 numero");
+            break;
+        case controllaEsistenza(user, utenti):
+            break;
+        default:
+            utenti.push(user);
+            console.table(utenti)
+            window.localStorage.setItem('utenti', JSON.stringify(utenti))
+            console.log('user added');
+            alert("Registrazione avvenuta con successo!");
+            redirectToHome();
     }
 
-    console.table(utenti)
-    window.localStorage.setItem('utenti', JSON.stringify(utenti))
-    console.log('user added');
-    alert("Registrazione avvenuta con successo!");
-    redirectToHome();
+    
 }
 
 function controllaEsistenza(newUtente, utenti) {
-    var risultato = utenti.find(user => user.username == newUtente.username)
-
-    if (risultato != undefined) {
-        return true
-    } else {
-        return false
+    for(let i=0; i<utenti.length; i++){
+        if (newUtente.username == utenti[i].username){
+            alert("Username già esistente");
+            return true;
+        }else if(newUtente.email == utenti[i].email){
+            alert("Email già esistente");
+            return true;
+        }
     }
+    return false;
 }
 
 // Gestione della registrazione

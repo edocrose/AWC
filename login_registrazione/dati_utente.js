@@ -34,17 +34,30 @@ function elimina(){
     var conferma = window.confirm("Sei sicuro di voler cancellare l'account?");
     var username = urlParams.get("username");
     if (conferma) {
-        var utenti = localStorage.getItem('utenti');
-        var json = JSON.parse(utenti);
-        for(var i = 0; i < json.length; i++){
-            if(json[i].username == username){
-                json.splice(i, 1);
+        //rimuovo gli scambi dell'utente
+        var jsonS = localStorage.getItem('scambi');
+        var scambi = JSON.parse(jsonS);
+        for(let j = 0 ;j<scambi.length;j++){
+            if(scambi[j].utenteRichiedente == username){
+                scambi.splice(j, 1);
+            }
+        }
+
+        var modS = JSON.stringify(scambi);
+        localStorage.setItem('scambi', modS);
+
+        //rimuovo utente
+        var jsonU = localStorage.getItem('utenti');
+        var utenti = JSON.parse(jsonU);
+        for(var i = 0; i < utenti.length; i++){
+            if(utenti[i].username == username){
+                utenti.splice(i, 1);
                 break;
             }
         }
 
-        var mod = JSON.stringify(json);
-        localStorage.setItem('utenti', mod);
+        var modU = JSON.stringify(utenti);
+        localStorage.setItem('utenti', modU);
 
         window.location.href="login.html";
     } else {
