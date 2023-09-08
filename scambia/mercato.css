@@ -1,28 +1,39 @@
 /* Stile base per il link */
+.header-scambi {
+  margin-top: 20px;
+}
+
 .link-button {
-    display: inline-block;
-    padding: 10px 20px; /* Padding per spaziatura interna */
-    text-decoration: none; /* Rimuove il sottolineato del link */
-    font-weight: bold; /* Rende il testo in grassetto */
-    text-align: center; /* Allinea il testo al centro */
-    color: #fff; /* Colore del testo */
-    background-color: #007bff; /* Colore di sfondo */
-    border: 2px solid #007bff; /* Bordo */
-    border-radius: 5px; /* Angoli arrotondati */
-    cursor: pointer; /* Cambia il cursore al passaggio del mouse */
-  }
+  top: 2px;
+  position: relative;
+  background: #1e9bff ;
+  color: #1e9bff;
+  text-decoration: none;
+  text-transform: capitalize;
+  font-weight: 400;
+  padding: 10px 10px;
+  transition: 0.5s;
+  border: none;
+}
   
-  /* Stile al passaggio del mouse (hover) */
-  .link-button:hover {
-    background-color: #0056b3; /* Cambia il colore di sfondo al passaggio del mouse */
-    border: 2px solid #0056b3; /* Cambia il colore del bordo al passaggio del mouse */
-  }
+/* Stile al passaggio del mouse (hover) */
+.link-button:hover {
+  background: #1e9bff;
+  color: #1e9bff;
+  letter-spacing: 0.10em;
+  box-shadow: 0 0 35px #1e9bff;
+}
   
-  /* Stile al clic (active) */
-  .link-button:active {
-    background-color: #003b80; /* Cambia il colore di sfondo al clic */
-    border: 2px solid #003b80; /* Cambia il colore del bordo al clic */
-  }
+.link-button::before {
+  content: '';
+  inset: 2px;
+  position: absolute;
+  background: #27282c;
+}
+
+.link-button span {
+  position: relative;
+}
 
 .testo{
     color: white;
@@ -105,7 +116,7 @@ button:hover {
   display: flex;
   align-items: center;
 }
-
+/*css frecce*/
 .contenitore-frecce {
   display: inline-block;
   vertical-align: middle;
@@ -130,27 +141,36 @@ button:hover {
   border-color: transparent transparent transparent red;
   margin-left: 10px;
 }
-
-.accetta{
-  display: inline-block;
-  padding: 10px 20px;
-  /* Padding per spaziatura interna */
+/*css pulsante accetta*/
+.accetta {
+  position: relative;
+  background: rgb(1, 199, 1);
+  color: rgb(1, 199, 1);
   text-decoration: none;
-  /* Rimuove il sottolineato del link */
-  font-weight: bold;
-  /* Rende il testo in grassetto */
-  text-align: center;
-  /* Allinea il testo al centro */
-  color: #fff;
-  /* Colore del testo */
-  background-color: #007bff;
-  /* Colore di sfondo */
-  border: 2px solid #007bff;
-  /* Bordo */
-  border-radius: 5px;
-  /* Angoli arrotondati */
-  cursor: pointer;
-  /* Cambia il cursore al passaggio del mouse */
+  text-transform: capitalize;
+  letter-spacing: 0.1em;
+  font-weight: 400;
+  padding: 10px 30px;
+  transition: 0.5s;
+  border: none;
+}
+
+.accetta:hover {
+  background: rgb(1, 199, 1);
+  color: rgb(1, 199, 1);
+  letter-spacing: 0.25em;
+  box-shadow: 0 0 35px rgb(1, 199, 1);
+}
+
+.accetta::before {
+  content: '';
+  inset: 2px;
+  position: absolute;
+  background: #27282c;
+}
+
+.accetta span {
+  position: relative;
 }
 
 
