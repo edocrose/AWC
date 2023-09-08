@@ -55,12 +55,12 @@ var scambi = JSON.parse(jsonScambi);
 
 var index = null
 
-var container = document.querySelector('.mercato');
+var container = document.querySelector('.proposte');
 
 async function displayScambi() {
     for (var i = 0; i < scambi.length; i++) {
         index = i;
-        if (scambi[i].utenteRichiedente != username) {
+        if (scambi[i].utenteRichiedente == username) {
             // Crea l'elemento "change" aspettando che createChangeElement restituisca un valore
             const changeElement = await createChangeElement(scambi[i], i);
             var aCapo = document.createElement('br');
@@ -71,58 +71,6 @@ async function displayScambi() {
     }
   }
 displayScambi();
-
-function effettuaScambio(user, scambio, index){
-    var scambioCompl = {
-        cartaRichiesta: scambio.cartaRichiesta,
-        cartaCeduta: scambio.cartaCeduta,
-        utenteRichiedente: scambio.utenteRichiedente,
-        utenteAccetta: user.username,
-    };
-
-    richiedente = utenti[trovaUtente(scambioCompl.utenteRichiedente)];
-    
-    //metto carta dentro Accetta e tolgo da Richiedente
-    var indexCedutaCarte = trovaCarta(scambioCompl.cartaCeduta, richiedente.carte);
-    var indexCedutaDoppie = trovaCarta(scambioCompl.cartaCeduta, richiedente.doppie);
-    var indexRichiestaCarte = trovaCarta(scambioCompl.cartaRichiesta, accetta.carte);
-    var indexRichiestaDoppie = trovaCarta(scambioCompl.cartaRichiesta, accetta.doppie);
-    if(indexRichiestaDoppie != null){
-      var cartaCeduta = richiedente.doppie[indexCedutaDoppie];
-      accetta.carte.push(cartaCeduta);
-      richiedente.doppie.splice(indexCedutaDoppie, 1);
-      richiedente.carte.splice(indexCedutaCarte, 1);
-
-      var cartaRichiesta = accetta.doppie[indexRichiestaDoppie];
-      richiedente.carte.push(cartaRichiesta);
-      accetta.doppie.splice(indexRichiestaDoppie, 1);
-      accetta.carte.splice(indexRichiestaCarte, 1);
-
-      //console.log(cartaCeduta);
-      for(let i=0; i<scambi.length; i++){
-        //console.log(scambi[i].cartaCeduta);
-        if(scambi[i].cartaCeduta == cartaCeduta.name && scambi[i].utenteRichiedente == richiedente.username){
-          scambi.splice(i, 1)
-        }
-      }
-
-      //tolgo lo scambio
-      //scambi.splice(index,1);
-
-
-
-      //aggiorno il localStorage
-      localStorage.setItem('utenti', JSON.stringify(utenti));
-      localStorage.setItem('scambi', JSON.stringify(scambi));
-
-      alert("Scambio effettuato con successo");
-      getDataHome2();
-    }else{
-      alert("Non hai la carta richiesta!");
-      window.location.href="mercato.html?username="+username;
-    }
-    
-}
 
 async function createChangeElement(scambio, index) {
     return new Promise(async (resolve, reject) => {
@@ -165,7 +113,7 @@ async function createChangeElement(scambio, index) {
       ceduta.className = 'richiesta';
       ceduta.textContent = "Ceduta: " + scambio.cartaCeduta;
     
-      // Crea l'elemento "cartaRichiesta"
+      
       var cartaCeduta = document.createElement('div');
       cartaCeduta.id = 'character-card';
       var imgCed = document.createElement('img');
@@ -202,17 +150,11 @@ async function createChangeElement(scambio, index) {
       contenitoreFrecce.appendChild(aCapo);
       contenitoreFrecce.appendChild(frecciaDestra);
 
-      var button = document.createElement('button');
-        button.textContent = "Accetta";
-        button.className='Accetta';
-        button.addEventListener('click', function() {
-            effettuaScambio(accetta, scambi[index], index);
-        });
       // Aggiungi tutti gli elementi al "change"
-      change.appendChild(cartaRichiesta);
-      change.appendChild(contenitoreFrecce);
       change.appendChild(cartaCeduta);
-      change.appendChild(button);
+      change.appendChild(contenitoreFrecce);
+      change.appendChild(cartaRichiesta);
+      
   
       resolve(change); // Risolvi la promessa quando l'elemento è stato creato
     });
