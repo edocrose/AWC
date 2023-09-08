@@ -73,4 +73,10 @@ function getDataScambia3(){
     window.location.href = "../scambia/scambia.html?username="+username;
 }
 
+function getDataScambia4(){
+    const urlParams = new URLSearchParams(window.location.search);
+    const username = urlParams.get("username");
+    window.location.href = "../scambia/proposte.html?username="+username;
+}
+
 

@@ -36,7 +36,7 @@ function cards(mazzo) {
 
         var img = document.createElement('img');
         img.classList.add('card-img-top');
-        img.src = mazzo[i].thumbnail.path + "." + mazzo[i].thumbnail.extension;
+        img.src = mazzo[i].thumbnail.path + "/standard_fantastic." + mazzo[i].thumbnail.extension;
 
         var h2 = document.createElement('h2');
         h2.classList.add('card-title');
@@ -60,6 +60,15 @@ function cards(mazzo) {
         cardContainer.appendChild(characterCard); // Aggiungi il div clonato come figlio del contenitore
     }
 }
+
+// Calcola la percentuale di completamento
+const percentualeCompletamento = ((user.carte.length - user.doppie.length) / 1562) * 100;
+
+// Aggiorna la larghezza della barra di avanzamento
+const figurineProgress = document.getElementById("figurineProgress");
+figurineProgress.style.width = percentualeCompletamento + "%";
+const percentuale= document.getElementById("percentuale");
+percentuale.textContent= "Hai il " + percentualeCompletamento + "% del totale delle carte disponibili";
 
 
 
