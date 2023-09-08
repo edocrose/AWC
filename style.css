@@ -301,3 +301,43 @@ body {
 .total-price {
     font-size: 16px;
 }
+
+/* Stile generale della barra di avanzamento */
+.progress {
+    background-color: #ddd;
+    border-radius: 10px;
+    height: 20px;
+  }
+  
+  /* Stile della barra di avanzamento riempita */
+  .progress-bar {
+    background-color: #ff0000; /* Rosso Marvel */
+    border-radius: 10px;
+    height: 100%;
+    width: 0%; /* Inizialmente a larghezza zero */
+    transition: width 0.5s ease-in-out; /* Animazione di riempimento */
+  }
+  
+  /* Stile del testo percentuale all'interno della barra */
+  .progress-text {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #fff; /* Testo bianco */
+    font-weight: bold;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+    z-index: 1;
+  }
+  
+  /* Stile aggiuntivo per uno stile Marvel */
+  .progress-bar-marvel {
+    background-color: #ff0000; /* Rosso Marvel */
+    box-shadow: 0 0 10px rgba(255, 0, 0, 0.8);
+  }
+  
+  /* Stile per la barra di avanzamento quando è piena */
+  .progress-bar-full {
+    background-color: #00ff00; /* Verde quando la barra è piena */
+  }
+  
