@@ -103,14 +103,12 @@ body {
     display: flex;
     padding: 20px;
     border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
     text-align: justify;
 }
 
 .registration-box {
     background-color: #a27676;
     border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
     padding: 20px;
     text-align: center;
 }
@@ -231,47 +229,42 @@ body {
     text-align: center;
 }
 
-.descrizione button {
-    top: -70px;
-    margin-top: 5px;
-    padding: 10px 20px;
-    background-color: #3498db;
-    color: rgb(255, 255, 255);
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-.descrizione h2 {
-    color: white;
-
-}
-
-.descrizione button:hover {
-    background-color: #2980b9;
-}
-
-.minus,
-.plus {
-    font-size: 10px;
-    background-color: #ccc;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    padding: 5px 10px;
-    cursor: pointer;
-}
-
-.quantity {
-    color: white;
-    margin: 0 10px;
-    font-size: 18px;
-}
 
 .descrizione h3 {
     color: white;
 }
+
+.acquista {
+    position: relative;
+    background: #1e9bff ;
+    color: #1e9bff;
+    text-decoration: none;
+    text-transform: capitalize;
+    letter-spacing: 0.1em;
+    font-weight: 400;
+    padding: 10px 30px;
+    transition: 0.5s;
+    border: none;
+}
+
+.acquista:hover {
+    background: #1e9bff;
+    color: #1e9bff;
+    letter-spacing: 0.25em;
+    box-shadow: 0 0 35px #1e9bff;
+}
+
+.acquista:before {
+    content: '';
+    inset: 2px;
+    position: absolute;
+    background: #27282c;
+}
+
+.acquista span {
+    position: relative;
+}
+
 
 /*da qui inizia il css per i crediti*/
 .credits {
@@ -287,15 +280,50 @@ body {
 }
 
 .credits button {
-    top: -70px;
-    margin-top: 5px;
-    padding: 10px 20px;
-    background-color: #3498db;
-    color: rgb(255, 255, 255);
+    position: relative;
+    background: #1e9bff;
+    color: #1e9bff;
+    text-decoration: none;
+    text-transform: capitalize;
+    font-weight: 400;
+    padding: 10px 15px;
+    transition: 0.5s;
+    border: none;
+}
+
+.quantity {
+    color: white;
+    margin: 0 10px;
+    font-size: 18px;
+}
+
+.quantity-buttons button:hover {
+    background: #1e9bff;
+    color: #1e9bff;
+    letter-spacing: 0.20em;
+    box-shadow: 0 0 35px #1e9bff;
+}
+
+.quantity-buttons button::before {
+    content: '';
+    inset: 2px;
+    position: absolute;
+    background: #27282c;
+}
+
+.quantity-buttons span {
+    position: relative;
+}
+
+.minus,
+.plus {
+    font-size: 10px;
+    background-color: #ccc;
+    color: white;
     border: none;
     border-radius: 5px;
+    padding: 5px 10px;
     cursor: pointer;
-    transition: background-color 0.3s;
 }
 
 .total-price {
@@ -307,37 +335,42 @@ body {
     background-color: #ddd;
     border-radius: 10px;
     height: 20px;
-  }
-  
-  /* Stile della barra di avanzamento riempita */
-  .progress-bar {
-    background-color: #ff0000; /* Rosso Marvel */
+}
+
+/* Stile della barra di avanzamento riempita */
+.progress-bar {
+    background-color: #ff0000;
+    /* Rosso Marvel */
     border-radius: 10px;
     height: 100%;
-    width: 0%; /* Inizialmente a larghezza zero */
-    transition: width 0.5s ease-in-out; /* Animazione di riempimento */
-  }
-  
-  /* Stile del testo percentuale all'interno della barra */
-  .progress-text {
+    width: 0%;
+    /* Inizialmente a larghezza zero */
+    transition: width 0.5s ease-in-out;
+    /* Animazione di riempimento */
+}
+
+/* Stile del testo percentuale all'interno della barra */
+.progress-text {
     position: absolute;
     top: 0;
     left: 50%;
     transform: translateX(-50%);
-    color: #fff; /* Testo bianco */
+    color: #fff;
+    /* Testo bianco */
     font-weight: bold;
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
     z-index: 1;
-  }
-  
-  /* Stile aggiuntivo per uno stile Marvel */
-  .progress-bar-marvel {
-    background-color: #ff0000; /* Rosso Marvel */
+}
+
+/* Stile aggiuntivo per uno stile Marvel */
+.progress-bar-marvel {
+    background-color: #ff0000;
+    /* Rosso Marvel */
     box-shadow: 0 0 10px rgba(255, 0, 0, 0.8);
-  }
-  
-  /* Stile per la barra di avanzamento quando è piena */
-  .progress-bar-full {
-    background-color: #00ff00; /* Verde quando la barra è piena */
-  }
-  
+}
+
+/* Stile per la barra di avanzamento quando è piena */
+.progress-bar-full {
+    background-color: #00ff00;
+    /* Verde quando la barra è piena */
+}
