@@ -1,4 +1,4 @@
-
+/*ok modifica solo style.css*/
 
 body {
     font-family: Arial, sans-serif;
@@ -38,20 +38,6 @@ body {
     border-radius: 5px;
   }
   
-  button {
-    margin-top: 20px;
-    padding: 10px 20px;
-    background-color: #3498db;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-  
-  button:hover {
-    background-color: #2980b9;
-  } 
-
   .link-button {
     display: inline-block;
     padding: 10px 20px;
