@@ -25,6 +25,7 @@ h1 {
 
 .contenuto p {
     color: white;
+    max-width: 800px;
 }
 
 

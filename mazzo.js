@@ -41,13 +41,13 @@ function cards(mazzo) {
         var h2 = document.createElement('h2');
         h2.classList.add('card-title');
 
-        var nameParts = mazzo[i].name.split('(');
-        h2.innerHTML = nameParts[0];
+        var name = mazzo[i].name;
 
-        if (nameParts.length > 1) {
-            h2.innerHTML += '<br>(' + nameParts.slice(1).join('(');
+        if (name.length > 12) {
+            name = name.substring(0, 12) + '...';
         }
-
+        h2.innerHTML = name
+        
         var a = document.createElement('a');
         a.classList.add('btn-primary');
         a.href = 'cartaDettagli.html?index=' + i + '&username=' + username;
@@ -67,11 +67,5 @@ const percentualeCompletamento = ((user.carte.length - user.doppie.length) / 156
 // Aggiorna la larghezza della barra di avanzamento
 const figurineProgress = document.getElementById("figurineProgress");
 figurineProgress.style.width = percentualeCompletamento + "%";
-const percentuale= document.getElementById("percentuale");
-percentuale.textContent= "Hai il " + percentualeCompletamento + "% del totale delle carte disponibili";
-
-
-
-
-
-
+const percentuale = document.getElementById("percentuale");
+percentuale.textContent = "Hai il " + percentualeCompletamento + "% del totale delle carte disponibili";
