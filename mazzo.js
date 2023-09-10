@@ -62,7 +62,7 @@ function cards(mazzo) {
 }
 
 // Calcola la percentuale di completamento
-const percentualeCompletamento = ((user.carte.length - user.doppie.length) / 1562) * 100;
+const percentualeCompletamento = (((user.carte.length - user.doppie.length) / 1562) * 100).toFixed(2);
 
 // Aggiorna la larghezza della barra di avanzamento
 const figurineProgress = document.getElementById("figurineProgress");
