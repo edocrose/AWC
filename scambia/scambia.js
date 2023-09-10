@@ -22,21 +22,20 @@ function cards(mazzo) {
 
         var img = document.createElement('img');
         img.classList.add('card-img-top');
-        img.alt = '...';
-        img.src = mazzo[i].thumbnail.path + "." + mazzo[i].thumbnail.extension;
+        img.src = mazzo[i].thumbnail.path + "/standard_fantastic." + mazzo[i].thumbnail.extension;
 
         var h2 = document.createElement('h2');
         h2.classList.add('card-title');
-        h2.innerHTML = mazzo[i].name;
 
-        var a = document.createElement('a');
-        a.classList.add('btn-primary');
-        a.href = 'scheda-supereroe.html?id=' + mazzo[i].id + '&username=' + username;
-        a.innerHTML = 'Scopri di più';
+        var name = mazzo[i].name;
+
+        if (name.length > 12) {
+            name = name.substring(0, 12) + '...';
+        }
+        h2.innerHTML = name
 
         characterCard.appendChild(img);
         characterCard.appendChild(h2);
-        characterCard.appendChild(a);
 
         cardContainer.appendChild(characterCard); // Aggiungi il div clonato come figlio del contenitore
     }

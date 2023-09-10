@@ -32,7 +32,7 @@ async function trovaImmagine(nomeCarta) {
     const response = await fetch(url);
     const jsonData = await response.json();
 
-    const img = jsonData.data.results[0].thumbnail.path + "." + jsonData.data.results[0].thumbnail.extension;
+    const img = jsonData.data.results[0].thumbnail.path + "/standard_fantastic." + jsonData.data.results[0].thumbnail.extension;
     return img;
   } catch (error) {
     console.error("Errore nella richiesta HTTP:", error);
@@ -150,12 +150,12 @@ async function createChangeElement(scambio, index) {
     }
 
     var h2Ric = document.createElement('h2');
-    var namePartsRic = scambio.cartaRichiesta.split('(');
-    h2Ric.innerHTML = namePartsRic[0];
+    var nameRic = scambio.cartaRichiesta;
 
-    if (namePartsRic.length > 1) {
-      h2Ric.innerHTML += '<br>(' + namePartsRic.slice(1).join('(');
+    if (nameRic.length > 12) {
+      nameRic = nameRic.substring(0, 12) + '...';
     }
+    h2Ric.innerHTML = nameRic
     cartaRichiesta.appendChild(imgRic);
     cartaRichiesta.appendChild(h2Ric);
 
@@ -179,12 +179,12 @@ async function createChangeElement(scambio, index) {
     }
 
     var h2Ced = document.createElement('h2');
-    var namePartsCed = scambio.cartaCeduta.split('(');
-    h2Ced.innerHTML = namePartsCed[0];
+    var nameCed = scambio.cartaCeduta;
 
-    if (namePartsCed.length > 1) {
-      h2Ced.innerHTML += '<br>(' + namePartsCed.slice(1).join('(');
+    if (nameCed.length > 12) {
+      nameCed = nameRic.substring(0, 12) + '...';
     }
+    h2Ced.innerHTML = nameRic
     cartaCeduta.appendChild(imgCed);
     cartaCeduta.appendChild(h2Ced);
 
