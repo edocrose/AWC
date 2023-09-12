@@ -12,3 +12,7 @@ COSE DA FARE:
 -> non si possono accettare scambi con carte che si hanno già
 
 -> controllare bene se ci sono errori nella console quando si fanno gli eventListener
+
+-> aggiungere titoli alla scheda (sopra)
+
+-> modificare font delle scritte
