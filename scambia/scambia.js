@@ -1,5 +1,5 @@
-//const urlParams = new URLSearchParams(window.location.search);
-//const username = urlParams.get("username");
+var urlParams = new URLSearchParams(window.location.search);
+var username = urlParams.get("username");
 var utenti = localStorage.getItem('utenti');
 var json = JSON.parse(utenti);
 var user = null;

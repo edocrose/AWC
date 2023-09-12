@@ -42,8 +42,8 @@ async function trovaImmagine(nomeCarta) {
 
 
 //TROVA UTENTE
-//const urlParams = new URLSearchParams(window.location.search);
-//const username = urlParams.get("username");
+var urlParams = new URLSearchParams(window.location.search);
+var username = urlParams.get("username");
 var json = localStorage.getItem('utenti');
 var utenti = JSON.parse(json);
 var accetta = utenti[trovaUtente(username)];
@@ -78,6 +78,14 @@ function effettuaScambio(user, scambio, index) {
     utenteRichiedente: scambio.utenteRichiedente,
     utenteAccetta: user.username,
   };
+  
+  for (let y=0; y<accetta.carte.length; y++){
+    //console.log("carta" + accetta.carte[y].name +"==" + cartaCeduta)
+    if(accetta.carte[y].name == cartaCeduta){
+      alert ("La carta che stai accentando è già nel tuo mazzo!")
+      return 
+    }
+  }
 
   richiedente = utenti[trovaUtente(scambioCompl.utenteRichiedente)];
 
@@ -88,34 +96,84 @@ function effettuaScambio(user, scambio, index) {
   var indexRichiestaDoppie = trovaCarta(scambioCompl.cartaRichiesta, accetta.doppie);
   if (indexRichiestaDoppie != null) {
     var cartaCeduta = richiedente.doppie[indexCedutaDoppie];
-    accetta.carte.push(cartaCeduta);
-    richiedente.doppie.splice(indexCedutaDoppie, 1);
-    richiedente.carte.splice(indexCedutaCarte, 1);
+    //accetta.carte.push(cartaCeduta);
+    //richiedente.doppie.splice(indexCedutaDoppie, 1);
+    //richiedente.carte.splice(indexCedutaCarte, 1);
 
     var cartaRichiesta = accetta.doppie[indexRichiestaDoppie];
-    richiedente.carte.push(cartaRichiesta);
-    accetta.doppie.splice(indexRichiestaDoppie, 1);
-    accetta.carte.splice(indexRichiestaCarte, 1);
+    //richiedente.carte.push(cartaRichiesta);
+    //accetta.doppie.splice(indexRichiestaDoppie, 1);
+    //accetta.carte.splice(indexRichiestaCarte, 1);
 
-    //console.log(cartaCeduta);
-    for (let i = 0; i < scambi.length; i++) {
-      //console.log(scambi[i].cartaCeduta);
-      if (scambi[i].cartaCeduta == cartaCeduta.name && scambi[i].utenteRichiedente == richiedente.username) {
-        scambi.splice(i, 1)
+    //funzione che toglie dagli scambi porposti da 'accetta':
+    // - quelli in cui chiedeva la carta che ha accettato
+    // - quelli dove metteva in cambio la figurina che ha ceduto
+    // NB: non deve cancellare se ci sono più doppie
+    function cancellaScambi(){
+      if(!controllaDoppie(cartaRichiesta, accetta)){
+        for(let j=0; j<scambi.length; j++){  
+          if(scambi[j].utenteAccetta = accetta.username){
+            console.log(scambi[j].cartaCeduta + "==" + cartaRichiesta.name)
+            console.log(scambi[j].cartaRichiesta + "==" + cartaCeduta.name)
+            if(scambi[j].cartaCeduta == cartaRichiesta.name || scambi[j].cartaRichiesta == cartaCeduta.name){
+              scambi.splice(j, 1);
+              j--
+              console.log("Cancella scambi splice")
+            }
+          }
+        }  
       }
     }
 
-    //tolgo lo scambio
-    //scambi.splice(index,1);
+    //funzione che controlla se ci sono doppie uguali, in modo da capire se cancellare
+    // o meno tutti gli scambi con quella carta fatto dall'utente
+    function controllaDoppie(carta, user){
+      var count = 0;
+      for(let k=0; k<user.doppie.length; k++){
+        if(carta.name == user.doppie[k].name){
+          count++;
+        }
+      }
+      if(count > 1){
+        return true;
+      }
+      return false;
+    }
 
+    //console.log(cartaCeduta);
+    for (let i = 0; i < scambi.length; i++) {
+      console.log(scambi[i].cartaCeduta);
+      console.log(cartaCeduta.name);
+      console.log(scambi[i].utenteRichiedente);
+      console.log(richiedente.username);
+      console.log(i);
+      if (scambi[i].cartaCeduta == cartaCeduta.name && scambi[i].utenteRichiedente == richiedente.username) {
+        var temp = null;
+        temp = scambi[i];
+        scambi[i] = scambi[scambi.length -1];
+        scambi[scambi.length-1] = temp;
+        scambi.length--;
+        i--;
+        console.log("VIWBASNDOV SBKZ");
+        console.log(controllaDoppie(cartaCeduta, richiedente));
+        console.log(richiedente);
+        if (controllaDoppie(cartaCeduta, richiedente)){
+          console.log("aaaaaa");
+          break;
+        }
+      }
+    }
+    
 
+    cancellaScambi();
+    console.log(scambi);
 
     //aggiorno il localStorage
-    localStorage.setItem('utenti', JSON.stringify(utenti));
-    localStorage.setItem('scambi', JSON.stringify(scambi));
+    //localStorage.setItem('utenti', JSON.stringify(utenti));
+    //localStorage.setItem('scambi', JSON.stringify(scambi));
 
     alert("Scambio effettuato con successo");
-    getDataHome2();
+    //getDataHome2();
   } else {
     alert("Non hai la carta richiesta!");
     window.location.href = "mercato.html?username=" + username;

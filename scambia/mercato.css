@@ -1,6 +1,7 @@
 /* Stile base per il link */
 .header-scambi {
   margin-top: 20px;
+  margin-bottom: 30px;
 }
 
 .link-button {
@@ -62,10 +63,6 @@
   cursor: pointer;
 }
 
-button:hover {
-  background-color: #2980b9;
-}
-
 .listaRichiesta {
   background-color: red;
   margin-left: 35%;
@@ -75,7 +72,6 @@ button:hover {
 }
 
 .listaDoppie {
-  display: flex;
   justify-content: space-between;
   align-items: center;
   background-color: red;
@@ -175,4 +171,34 @@ button:hover {
 
 
 
+/*css pulsante elimina*/
+.elimina {
+  position: relative;
+  background: rgb(202, 6, 6);
+  color: rgb(202, 6, 6);
+  text-decoration: none;
+  text-transform: capitalize;
+  letter-spacing: 0.1em;
+  font-weight: 400;
+  padding: 10px 30px;
+  transition: 0.5s;
+  border: none;
+}
 
+.elimina:hover {
+  background: rgb(202, 6, 6);
+  color: rgb(202, 6, 6);
+  letter-spacing: 0.25em;
+  box-shadow: 0 0 35px rgb(202, 6, 6);
+}
+
+.elimina::before {
+  content: '';
+  inset: 2px;
+  position: absolute;
+  background: #27282c;
+}
+
+.elimina span {
+  position: relative;
+}

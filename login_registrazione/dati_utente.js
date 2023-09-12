@@ -1,15 +1,15 @@
-const urlParams = new URLSearchParams(window.location.search);
-
-const username = urlParams.get("username");
-var utenti = localStorage.getItem('utenti');
-var json = JSON.parse(utenti);
-var data = null;
-for (var i = 0; i < json.length; i++) {
-    if (json[i].username == username) {
-        data = json[i];
-        break;
+var urlParams = new URLSearchParams(window.location.search);
+    
+    var username = urlParams.get("username");
+    var utenti = localStorage.getItem('utenti');
+    var json = JSON.parse(utenti);
+    var data = null;
+    for(var i = 0; i < json.length; i++){
+        if(json[i].username == username){
+            data = json[i];
+            break;
+        }
     }
-}
 
 
 const usernameElement = document.getElementById('username');
@@ -18,27 +18,26 @@ const passwordElement = document.getElementById('password');
 const superheroElement = document.getElementById('superhero');
 const creditsElement = document.getElementById('credits');
 
-usernameElement.value = username;
-emailElement.value = data.email;
-passwordElement.value = data.password;
-superheroElement.value = data.superhero;
-creditsElement.value = data.credits;
+usernameElement.value=username;
+emailElement.value=data.email;
+passwordElement.value=data.password;
+superheroElement.value=data.superhero;
+creditsElement.value=data.credits;
 
-function modifica() {
-    window.location.href = "modifica_dati.html?username=" + username;
+function modifica(){
+    window.location.href = "modifica_dati.html?username="+username;
 };
 
 //
 
-function elimina() {
+function elimina(){
     var conferma = window.confirm("Sei sicuro di voler cancellare l'account?");
-    var username = urlParams.get("username");
     if (conferma) {
         //rimuovo gli scambi dell'utente
         var jsonS = localStorage.getItem('scambi');
         var scambi = JSON.parse(jsonS);
-        for (let j = 0; j < scambi.length; j++) {
-            if (scambi[j].utenteRichiedente == username) {
+        for(let j = 0 ;j<scambi.length;j++){
+            if(scambi[j].utenteRichiedente == username){
                 scambi.splice(j, 1);
             }
         }
@@ -49,8 +48,8 @@ function elimina() {
         //rimuovo utente
         var jsonU = localStorage.getItem('utenti');
         var utenti = JSON.parse(jsonU);
-        for (var i = 0; i < utenti.length; i++) {
-            if (utenti[i].username == username) {
+        for(var i = 0; i < utenti.length; i++){
+            if(utenti[i].username == username){
                 utenti.splice(i, 1);
                 break;
             }
@@ -59,9 +58,12 @@ function elimina() {
         var modU = JSON.stringify(utenti);
         localStorage.setItem('utenti', modU);
 
-        window.location.href = "login.html";
+        window.location.href="login.html";
     } else {
-        window.location.href = "../home.html?username=" + username;
+        window.location.href = "../home.html?username="+username;
     }
-
+    
 };
+
+
+

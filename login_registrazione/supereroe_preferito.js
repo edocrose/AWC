@@ -2,7 +2,7 @@ let input = document.getElementById("superhero");
 let listContainer = document.querySelector(".lista");
 
 let date = new Date();
-console.log(date.getTime());
+//console.log(date.getTime());
 
 const [timestamp, apiKey, hashValue] = [ts, publicKey, hashVal];
 

@@ -117,17 +117,6 @@ cambio.addEventListener("keyup", async () => {
 });
 
 
-
-
-
-
-
-
-
-
-
-
-
 //QUANDO SCHIACCIA IL BOTTONE SCAMBIO
 function redirect(user) {
   window.location.href = "mercato.html?username="+user;
@@ -166,20 +155,18 @@ function scambia(e){
 
   var scambi = caricaScambi();
   console.log(scambi);
-  var result = controllaScambio(scambio, scambi)
-  console.log(result);
 
-  if (controllaScambio(scambio, scambi)) {
+  if (!controllaRichiesta(cartaRichiesta, utenteRichiedente)){
+      alert("La carta richiesta è già presente nel tuo mazzo")
+  } else if (controllaScambio(scambio, scambi)) {
       scambi.push(scambio)
+      window.localStorage.setItem('scambi', JSON.stringify(scambi))
+      alert("Scambio inserito con successo!");
+      redirect(utenteRichiedente);
   } else {
       alert("Scambio già esistente")
   }
-
-  console.table(scambi)
-  window.localStorage.setItem('scambi', JSON.stringify(scambi))
-  console.log('change added');
-  alert("Scambio inserito con successo!");
-  redirect(utenteRichiedente);
+  
 }
 
 function controllaScambio(newScambio, scambi) {
@@ -189,6 +176,29 @@ function controllaScambio(newScambio, scambi) {
     }
   }
   return true;
+}
+
+function trovaUtente(username) {
+  var index = null;
+  for (var i = 0; i < utenti.length; i++) {
+    if (utenti[i].username == username) {
+      index = i;
+      break;
+    }
+  }
+  return index;
+}
+
+function controllaRichiesta(carta, username){
+  var json = localStorage.getItem('utenti');
+  var utenti = JSON.parse(json);
+  var user = utenti[trovaUtente(user)];
+  for(let i=0; i<user.carte.length; i++){
+    if(carta == user.carte[i].name){
+      return false
+    }
+  }
+  return true
 }
 
 

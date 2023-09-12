@@ -12,9 +12,9 @@ function trovaUtenti(){
 }
 
 function trovaUtente() {
-    const urlParams = new URLSearchParams(window.location.search);
+    var urlParams = new URLSearchParams(window.location.search);
 
-    const username = urlParams.get("username");
+    var username = urlParams.get("username");
     var utenti = localStorage.getItem('utenti');
     var json = JSON.parse(utenti);
     var data = null;
@@ -49,8 +49,8 @@ document.addEventListener("DOMContentLoaded", function () {
         acquistaButton.addEventListener("click", async () =>{
             const packPrice = priceSpan.textContent;
             if (utente.credits >= packPrice) {
-                const urlParams = new URLSearchParams(window.location.search);
-                const username = urlParams.get("username");
+                var urlParams = new URLSearchParams(window.location.search);
+                var username = urlParams.get("username");
                 var utenti = localStorage.getItem('utenti');
                 var json = JSON.parse(utenti);
                 var user = null;
@@ -120,8 +120,8 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     compraCreditiButton.addEventListener("click", function(){
-        const urlParams = new URLSearchParams(window.location.search);
-        const username = urlParams.get("username");
+        var urlParams = new URLSearchParams(window.location.search);
+        var username = urlParams.get("username");
         var json = trovaUtenti();
         var data = null;
         for (var i = 0; i < json.length; i++) {
@@ -135,6 +135,8 @@ document.addEventListener("DOMContentLoaded", function () {
         var mod = JSON.stringify(json);
         localStorage.setItem('utenti', mod);
         alert("Grazie! Ora hai " + data.credits + " crediti")
+        window.location.href = "negozio.html?username="+username;
+        
     })
 
     function updateTotalPrice() {

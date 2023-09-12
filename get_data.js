@@ -1,67 +1,56 @@
+//funzione che riporta ai dati utente mantenendo i dati di login
 // DA USARE NEI FILE FUORI DALLA CARTELLA LOGIN
-let urlParams = new URLSearchParams(window.location.search);
 
-const username = urlParams.get("username");
+var urlParams = new URLSearchParams(window.location.search);
+var username = urlParams.get("username");
 
-function getData(){    
-
+function getData(){
     window.location.href = "login_registrazione/dati_utente.html?username="+username;
 }
 
 function getData2(){
-    
-
-
     window.location.href = "../login_registrazione/dati_utente.html?username="+username;
 }
 
 //funzione che riporta ai dati utente mantenendo i dati di login
 // DA USARE NEI FILE DENTRO DALLA CARTELLA LOGIN
 function getDataLogin(){
-    
     window.location.href = "dati_utente.html?username="+username;
 }
 
 //funzione che riporta alla home mantenendo i dati di login
 function getDataHome(){
-    
     window.location.href = "home.html?username="+username;
 }
 
 function getDataHome2(){
-    
-    
-    
     window.location.href = "../home/home.html?username="+username;
 }
 
 
 function getDataNegozio(){
-    
     window.location.href = "negozio/negozio.html?username="+username;
 }
 
 function getDataNegozio2(){
-    
     window.location.href = "../negozio/negozio.html?username="+username;
 }
 
 function getDataScambia(){
-    
     window.location.href = "scambia/mercato.html?username="+username;
 }
 
 function getDataScambia2(){
-    
     window.location.href = "../scambia/mercato.html?username="+username;
 }
 
 function getDataScambia3(){
-    
     window.location.href = "../scambia/scambia.html?username="+username;
 }
 
-
+function getDataScambia4(){
+    window.location.href = "../scambia/proposte.html?username="+username;
+}
 
 var utenti = localStorage.getItem('utenti');
 var json = JSON.parse(utenti);
@@ -87,6 +76,5 @@ function credito(credito) {
     credtsContainer.appendChild(credits)
     credtsContainer.appendChild(logoAv)
 }
-
 
 

@@ -1,13 +1,10 @@
 //nome,immagine, descrizione, comics, serie, eventi
-const urlParams = new URLSearchParams(window.location.search);
-const username = urlParams.get("username");
-var utenti = localStorage.getItem('utenti');
-var json = JSON.parse(utenti);
-var user = null;
+var urlParams = new URLSearchParams(window.location.search);
+var username = urlParams.get("username");
 var item = localStorage.getItem('pacchetto');
 var pack = null
 if (item == null){
-    const username = urlParams.get("username");
+    
     item = localStorage.getItem('utenti');
     var json = JSON.parse(item);
     for (var i = 0; i < json.length; i++) {
@@ -37,7 +34,7 @@ const comics = document.querySelector(".comics")
 const ul_com = document.createElement('ul');
 if(carta.comics.items.length == 0){
     const p = document.createElement("p");
-    p.textContent="Comics Not Found XDXDXDXD"
+    p.textContent="Comics Not Found"
     comics.appendChild(p)
 } else {
     for(let i=0; i<carta.comics.items.length; i++){
@@ -52,7 +49,7 @@ const series = document.querySelector(".series")
 const ul_ser = document.createElement('ul');
 if(carta.series.items.length == 0){
     const p = document.createElement("p");
-    p.textContent="Series Not Found XDXDXDXD"
+    p.textContent="Series Not Found"
     series.appendChild(p)
 } else {
     for(let i=0; i<carta.series.items.length; i++){
@@ -66,7 +63,7 @@ const events = document.querySelector(".events")
 const ul_ev = document.createElement('ul');
 if(carta.events.items.length == 0){
     const p = document.createElement("p");
-    p.textContent="Events Not Found XDXDXDXD"
+    p.textContent="Events Not Found"
     events.appendChild(p)
 }
 for(let i=0; i<carta.events.items.length; i++){
