@@ -6,9 +6,10 @@ body {
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
-
+    
 }
 /*da qui inizia il css per il nav delle pagine*/
+/* Navbar generale */
 .navbar {
     display: flex;
     justify-content: space-between;
@@ -17,56 +18,25 @@ body {
     padding: 10px 20px;
 }
 
-.logo {
-    align-items: center;
-    flex: 1;
-    display: flex;
-    justify-content: center;
-    margin-right: 270px ;
-}
-
-.logo img {
-    width: 150px;
-    height: 150px;
-}
-
-.navbar-right {
-    display: flex;
-    align-items: center;
-}
-
-.navbar-right img {
-    width: 70px;
-    height: 70px;
-    margin: 0 1px 0 10px;
-}
-
-.navbar-right {
-    margin-left: auto;
-    width: 70px;
-    height: 70px;
-    margin: 0 10px;
-}
-
-.menu ul{
+/* Stile del menu a sinistra */
+.menu ul {
     margin: 0;
     padding: 0;
     display: flex;
+    list-style-type: none;
     z-index: 1;
     transition: 0.5s;
-    padding: -50px;
 }
 
 .menu li {
     list-style-type: none;
-} 
-
+}
 
 .menu li a {
     color: black;
     text-decoration: none;
     display: block;
-    padding: 5px 20px ;
+    padding: 5px 20px;
     font-size: 16px;
     line-height: 1;
     transition: 0.3s;
@@ -78,18 +48,95 @@ body {
 }
 
 .menu li a:hover {
-    box-shadow: 0 -5px 0px black inset, 500px 0 0 rgb(30,30,30, 0.03) inset;
-    padding: 35px 25px 45px 25px;
+    box-shadow: 0 -5px 0px black inset, 500px 0 0 rgb(30, 30, 30, 0.03) inset;
+    padding: 10px 15px 35px 15px;
 }
 
+/* Logo al centro */
+.logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+}
 
-.hidden {
+.logo img {
+    width: 150px;
+    height: 150px;
+}
+
+/* Navbar a destra */
+.navbar-right {
+    display: flex;
+    align-items: center;
+}
+
+#userIcon img{
+    width: 70px;
+    height: 70px;
+    margin: 0 10px;
+    /* Aggiusta il margine come preferisci */
+}
+
+/* Contenitore del credito */
+.contenitoreCredito {
+    display: flex;
+    align-items: center;
+    width: auto;
+}
+
+.credito {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-right: 10px;
+}
+
+.avLogo {
+    width: 30px;
+    height: 30px;
+}
+/* Stile del pulsante a tendina */
+.dropbtn {
+    background-color: red;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+}
+
+/* Contenitore del menu a tendina */
+.dropdown {
+    position: relative;
+    display: inline-block;
+    margin-left: 30px;
+}
+
+/* Contenuto del menu a tendina (nascosto) */
+.dropdown-content {
     display: none;
+    position: absolute;
+    min-width: 120px;
+    z-index: 1;
 }
 
-.div_form {
-    margin: 10px;
-    color: aqua;
+/* Link all'interno del menu a tendina */
+.dropdown-content a {
+    background-color: white;
+    color: black;
+    padding: 10px 5px;
+    text-decoration: none;
+    display: block;
+    max-width: 108px;
+}
+
+/* Cambia il colore del link quando ci passi sopra con il mouse */
+.dropdown-content a:hover {
+    background-color: #f1f1f1;
+}
+
+/* Mostra il contenuto del menu a tendina quando passi sopra il pulsante */
+.dropdown:hover .dropdown-content {
+    display: block;
 }
 
 /*css per registrazione e login che alcuni pezzi sono in log_reg.css*/
@@ -141,49 +188,7 @@ body {
     color: #ffffff;
     z-index: 1;
 }
-/*css menù tutto a destra !!DA VEDERE!!*/
-/* Stile base del pulsante a tendina */
-.dropbtn {
-    background-color: red;
-    font-size: 16px;
-    border: none;
-    cursor: pointer;
-}
-
-/* Contenitore del menu a tendina */
-.dropdown {
-    position: relative;
-    display: inline-block;
-}
-
-/* Contenuto del menu a tendina (nascosto) */
-.dropdown-content {
-    display: none;
-    position: absolute;
-    min-width: 120px;
-    z-index: 1;
-}
-
-/* Link all'interno del menu a tendina */
-.dropdown-content a {
-    background-color: white;
-    color: black;
-    padding: 10px 5px;
-    text-decoration: none;
-    display: block;
-    max-width: 108px;
-}
-
-/* Cambia il colore del link quando ci passi sopra con il mouse */
-.dropdown-content a:hover {
-    background-color: #f1f1f1;
-}
-
-/* Mostra il contenuto del menu a tendina quando passi sopra il pulsante */
-.dropdown:hover .dropdown-content {
-    display: block;
-}
-
+/*titolo pagina home*/
 .titolo {
     color: white;
     text-align: center;
@@ -266,7 +271,7 @@ body {
 }
 
 
-/*da qui inizia il css per i crediti*/
+/*da qui inizia il css per acquisto di crediti*/
 .credits {
     color: white;
     text-align: center;

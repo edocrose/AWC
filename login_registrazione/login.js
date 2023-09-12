@@ -10,7 +10,7 @@ function redirectToHome() {
         }
     }
 
-    window.location.href = "../home.html?username="+data.username;
+    window.location.href = "../home/home.html?username="+data.username;
 }
 
 function loginFunc(e){

@@ -1,18 +1,15 @@
-//funzione che riporta ai dati utente mantenendo i dati di login
 // DA USARE NEI FILE FUORI DALLA CARTELLA LOGIN
-function getData(){
-    const urlParams = new URLSearchParams(window.location.search);
-    
-    const username = urlParams.get("username");
+let urlParams = new URLSearchParams(window.location.search);
 
+const username = urlParams.get("username");
+
+function getData(){    
 
     window.location.href = "login_registrazione/dati_utente.html?username="+username;
 }
 
 function getData2(){
-    const urlParams = new URLSearchParams(window.location.search);
     
-    const username = urlParams.get("username");
 
 
     window.location.href = "../login_registrazione/dati_utente.html?username="+username;
@@ -21,62 +18,75 @@ function getData2(){
 //funzione che riporta ai dati utente mantenendo i dati di login
 // DA USARE NEI FILE DENTRO DALLA CARTELLA LOGIN
 function getDataLogin(){
-    const urlParams = new URLSearchParams(window.location.search);
     
-    const username = urlParams.get("username");
     window.location.href = "dati_utente.html?username="+username;
 }
 
 //funzione che riporta alla home mantenendo i dati di login
 function getDataHome(){
-    const urlParams = new URLSearchParams(window.location.search);
     
-    const username = urlParams.get("username");
     window.location.href = "home.html?username="+username;
 }
 
 function getDataHome2(){
-    const urlParams = new URLSearchParams(window.location.search);
     
-    const username = urlParams.get("username");
-    window.location.href = "../home.html?username="+username;
+    
+    
+    window.location.href = "../home/home.html?username="+username;
 }
 
 
 function getDataNegozio(){
-    const urlParams = new URLSearchParams(window.location.search);
-    const username = urlParams.get("username");
+    
     window.location.href = "negozio/negozio.html?username="+username;
 }
 
 function getDataNegozio2(){
-    const urlParams = new URLSearchParams(window.location.search);
-    const username = urlParams.get("username");
+    
     window.location.href = "../negozio/negozio.html?username="+username;
 }
 
 function getDataScambia(){
-    const urlParams = new URLSearchParams(window.location.search);
-    const username = urlParams.get("username");
+    
     window.location.href = "scambia/mercato.html?username="+username;
 }
 
 function getDataScambia2(){
-    const urlParams = new URLSearchParams(window.location.search);
-    const username = urlParams.get("username");
+    
     window.location.href = "../scambia/mercato.html?username="+username;
 }
 
 function getDataScambia3(){
-    const urlParams = new URLSearchParams(window.location.search);
-    const username = urlParams.get("username");
+    
     window.location.href = "../scambia/scambia.html?username="+username;
 }
 
-function getDataScambia4(){
-    const urlParams = new URLSearchParams(window.location.search);
-    const username = urlParams.get("username");
-    window.location.href = "../scambia/proposte.html?username="+username;
+
+
+var utenti = localStorage.getItem('utenti');
+var json = JSON.parse(utenti);
+var user = null;
+for (var i = 0; i < json.length; i++) {
+    if (json[i].username == username) {
+        user = json[i];
+        credito(user.credits);
+        break;
+    }
 }
+var mod = JSON.stringify(json);
+localStorage.setItem('utenti', mod);
+
+function credito(credito) {
+    var credtsContainer = document.querySelector('.contenitoreCredito')
+    var credits = document.createElement('div')
+    credits.classList.add('credito')
+    credits.innerHTML = 'Credito: ' + credito
+    var logoAv = document.createElement('img');
+    logoAv.classList.add('avLogo')
+    logoAv.src = '../immagini/logoAv.png'
+    credtsContainer.appendChild(credits)
+    credtsContainer.appendChild(logoAv)
+}
+
 
 

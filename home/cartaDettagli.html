@@ -4,18 +4,17 @@
     <title>Marvel figure</title>
     <link rel="icon" href="../immagini/marvel_icona.webp" type="image/x-icon">
     <link rel="stylesheet" href="../style.css">
-    <link rel="stylesheet" href="../home/card.css">
-    <link rel="stylesheet" href="mercato.css">
-
+    <link rel="stylesheet" href="card.css">
+    <link rel="stylesheet" href="dettagli.css">
 </head>
 
 <body>
     <nav class="navbar">
         <div class="menu">
             <ul>
-                <li><a href="#" onclick="getDataHome2()">Home</a></li>
+                <li><a href="#" onclick="getDataHome()">Home</a></li>
                 <li><a href="#" onclick="getDataNegozio2()">Negozio</a></li>
-                <li><a href="#" class="current-page">Scambia</a></li>
+                <li><a href="#" onclick="getDataScambia2()">Scambia</a></li>
             </ul>
         </div>
         <div class="logo">
@@ -26,23 +25,32 @@
                 <button class="dropbtn"><a href="#" id="userIcon"><img src="../immagini/icona_utente.png"
                             alt="icona a destra"></a></button>
                 <div class="dropdown-content">
-                    <a href="#" onclick="getData2()">Dati utente</a>
+                    <a href="#" onclick="getData()">Dati utente</a>
                     <a href="../login_registrazione/login.html">Logout</a>
                 </div>
             </div>
         </div>
     </nav>
-    <div class="header-scambi">
-        <span class="testo">Le proposte di scambio</span>
-        <a href="#" onclick="getDataScambia3()" class="link-button"><span>Proponi uno scambio</span></a>
-    </div>
-    <div class="mercato">
-
-
+    <h1>Dettagli supereroe</h1>
+    <div class="contenuto">
+        <div class="text">
+        </div>
+        <div class="linea"></div>
+        <div class="obj">
+            <div class="comics">
+                <h3>COMICS</h3>
+            </div>
+            <div class="events">
+                <h3>EVENTS</h3>
+            </div>
+            <div class="series">
+                <h3>SERIES</h3>
+            </div>
+        </div>
     </div>
 </body>
 <script src="../login_registrazione/api-data.js"></script>
+<script src = "storiaCarta.js"></script>
 <script src="../get_data.js"></script>
-<script src="mercato.js"></script>
 
 </html>

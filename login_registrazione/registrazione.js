@@ -7,7 +7,7 @@ function redirectToHome() {
     var json = JSON.parse(utenti);
     var data = json[json.length - 1];
 
-    window.location.href = "../home.html?username="+data.username;
+    window.location.href = "../home/home.html?username=" + data.username;
 }
 
 function caricaUtenti() {
@@ -35,7 +35,7 @@ function validaPassword(password) {
     return regexPassword.test(password);
 }
 
-function signup(e){
+function signup(e) {
     event.preventDefault();
 
     var username = document.getElementById('username').value;
@@ -55,7 +55,7 @@ function signup(e){
 
     var utenti = caricaUtenti()
 
-    switch(true){
+    switch (true) {
         case !validaEmail(email):
             alert("Inserisci un indirizzo e-mail corretto");
             break;
@@ -73,15 +73,15 @@ function signup(e){
             redirectToHome();
     }
 
-    
+
 }
 
 function controllaEsistenza(newUtente, utenti) {
-    for(let i=0; i<utenti.length; i++){
-        if (newUtente.username == utenti[i].username){
+    for (let i = 0; i < utenti.length; i++) {
+        if (newUtente.username == utenti[i].username) {
             alert("Username già esistente");
             return true;
-        }else if(newUtente.email == utenti[i].email){
+        } else if (newUtente.email == utenti[i].email) {
             alert("Email già esistente");
             return true;
         }

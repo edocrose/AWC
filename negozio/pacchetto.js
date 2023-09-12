@@ -56,7 +56,7 @@ function redirectHome(){
     localStorage.removeItem('pacchetto');
     const urlParams = new URLSearchParams(window.location.search);
     const username = urlParams.get("username");
-    window.location.href = "../home.html?username="+username;
+    window.location.href = "../home/home.html?username="+username;
 }
 
 function redirectNegozio(){
@@ -64,6 +64,13 @@ function redirectNegozio(){
     const urlParams = new URLSearchParams(window.location.search);
     const username = urlParams.get("username");
     window.location.href = "negozio.html?username="+username;
+}
+
+function redirectScambia() {
+    localStorage.removeItem('pacchetto');
+    const urlParams = new URLSearchParams(window.location.search);
+    const username = urlParams.get("username");
+    window.location.href = "../scambia/scambia.html?username=" + username;
 }
 
 function redirectDati(){
@@ -84,29 +91,29 @@ function redirectLogout(){
 function mostraDettagliCarta1(){
     const urlParams = new URLSearchParams(window.location.search);
     const username = urlParams.get("username");
-    window.location.href = "../cartaDettagli.html?username="+username+"&index="+0;
+    window.location.href = "../home/cartaDettagli.html?username="+username+"&index="+0;
 }
 
 function mostraDettagliCarta2(){
     const urlParams = new URLSearchParams(window.location.search);
     const username = urlParams.get("username");
-    window.location.href = "../cartaDettagli.html?username="+username+"&index="+1;
+    window.location.href = "../home/cartaDettagli.html?username="+username+"&index="+1;
 }
 
 function mostraDettagliCarta3(){
     const urlParams = new URLSearchParams(window.location.search);
     const username = urlParams.get("username");
-    window.location.href = "../cartaDettagli.html?username="+username+"&index="+2;
+    window.location.href = "../home/cartaDettagli.html?username="+username+"&index="+2;
 }
 
 function mostraDettagliCarta4(){
     const urlParams = new URLSearchParams(window.location.search);
     const username = urlParams.get("username");
-    window.location.href = "../cartaDettagli.html?username="+username+"&index="+3;
+    window.location.href = "../home/cartaDettagli.html?username="+username+"&index="+3;
 }
 
 function mostraDettagliCarta5(){
     const urlParams = new URLSearchParams(window.location.search);
     const username = urlParams.get("username");
-    window.location.href = "../cartaDettagli.html?username="+username+"&index="+4;
+    window.location.href = "../home/cartaDettagli.html?username="+username+"&index="+4;
 }
