@@ -6,9 +6,6 @@
 4 - Bisogna chiedere se nello scambio di figurine serve interazione tra due utenti o è solo una proposta.
 
 COSE DA FARE:
-Logo -> spostato al centro DA RIVEDERE
-
-VENERDI 1/09
-METTERE CSS NEI BOTTONI ACQUISTANE ALTRI E TORNA ALLA HOME QUANDO VISUALIZZO IL PACCHETTO
-MODIFICARE ACQUISTA -> L'UTENTE PUO' COMPRARE SOLO UN PACCHETTO ALLA VOLTA
-NELLA HOME METTERE TUTTE LE CARTE DELL'UTENTE
+-> sistemare la navbar in login e registrazione
+-> non si possono accettare scambi con carte che si hanno già
+-> controllare bene se ci sono errori nella console quando si fanno gli eventListener
