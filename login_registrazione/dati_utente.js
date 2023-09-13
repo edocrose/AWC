@@ -16,13 +16,11 @@ const usernameElement = document.getElementById('username');
 const emailElement = document.getElementById('email');
 const passwordElement = document.getElementById('password');
 const superheroElement = document.getElementById('superhero');
-const creditsElement = document.getElementById('credits');
 
 usernameElement.value=username;
 emailElement.value=data.email;
 passwordElement.value=data.password;
 superheroElement.value=data.superhero;
-creditsElement.value=data.credits;
 
 function modifica(){
     window.location.href = "modifica_dati.html?username="+username;

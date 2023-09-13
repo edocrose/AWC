@@ -110,16 +110,3 @@ h2 {
 	margin-top: 10px; /* Aggiunge uno spazio tra il div e il link */
 }
 
-.tasto {
-	position: relative;
-		background: #1e9bff;
-		color: #1e9bff;
-		text-decoration: none;
-		text-transform: capitalize;
-		letter-spacing: 0.1em;
-		font-weight: 400;
-		padding: 10px 30px;
-		transition: 0.5s;
-		border: none;
-}
-

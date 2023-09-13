@@ -80,3 +80,6 @@ contenuto.appendChild(descrizione)
 comics.appendChild(ul_com)
 series.appendChild(ul_ser)
 events.appendChild(ul_ev)
+
+var titolo = document.getElementById("title");
+titolo.textContent=nome.textContent;

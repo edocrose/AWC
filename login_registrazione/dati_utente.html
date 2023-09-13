@@ -1,7 +1,8 @@
+<!DOCTYPE html>
 <html>
 
 <head>
-    <title>Marvel figure</title>
+    <title>Dati utente</title>
     <link rel="icon" href="../immagini/marvel_icona.webp" type="image/x-icon">
     <link rel="stylesheet" href="../style.css">
     <link rel="stylesheet" href="dati_utente.css">
@@ -21,6 +22,7 @@
         <img src="../immagini/marvel_icona.webp" alt="icona a sinistra" onclick="getDataHome()">
       </div>
     <div class="navbar-right">
+      <div class="contenitoreCredito"></div>
       <div class="dropdown">
         <button class="dropbtn"><a href="#" id="userIcon"><img src="../immagini/icona_utente.png"
               alt="icona a destra"></a></button>
@@ -46,9 +48,6 @@
           <br>
           <label for="superhero">Supereroe preferito:</label>
           <input type="text" id="superhero" name="superhero" readonly>
-          <br>
-          <label for="credits">Crediti rimanenti:</label>
-          <input type="text" id="credits" name="credits" readonly>
           <br>
           <a href="#" onclick="modifica()" class="link-button" id="mod">
             Modifica

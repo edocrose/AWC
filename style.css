@@ -153,11 +153,12 @@ body {
     background-color: #a27676;
     border-radius: 10px;
     padding: 20px;
+    width: 300px;
     text-align: center;
 }
 
 .login-box {
-    background-color: #fff;
+    background-color: #a27676;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
     padding: 20px;
@@ -182,13 +183,6 @@ body {
     border-bottom: 2px solid black;
 }
 
-.lista {
-    position: absolute;
-    width: 700px;
-    background-color: #555;
-    color: #ffffff;
-    z-index: 1;
-}
 /*titolo pagina home*/
 .titolo {
     color: white;
@@ -340,7 +334,6 @@ body {
 .total-price {
     font-size: 16px;
 }
-
 /*css barra home*/
 /* Stile generale della barra di avanzamento */
 .progress {
@@ -358,7 +351,9 @@ body {
     border-radius: 10px;
     height: 100%;
     width: 0%;
+    /* Inizialmente a larghezza zero */
     transition: width 0.5s ease-in-out;
+    /* Animazione di riempimento */
 }
 
 /* Stile del testo percentuale all'interno della barra */

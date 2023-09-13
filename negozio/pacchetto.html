@@ -1,7 +1,8 @@
+<!DOCTYPE html>
 <html>
 
 <head>
-    <title>Marvel figure</title>
+    <title>Pacchetto</title>
     <link rel="icon" href="../immagini/marvel_icona.webp" type="image/x-icon">
     <link rel="stylesheet" href="../style.css">
     <link rel="stylesheet" href="pacchetto.css">
@@ -33,45 +34,47 @@
         </div>
     </nav>
     <div class="container">
-            <ul id="cards">
-                <li class="card" id="card1">
-                    <div class="card-body">
-                        <div class="i1"></div>
-                        <a href="#" onclick="mostraDettagliCarta1()" class="learnMoreButton">Scopri di più</a>
-                    </div>
-                </li>
-                <li class="card" id="card2">
-                    <div class="card-body">
-                        <div class="i2"></div>
-                        <a href="#" onclick="mostraDettagliCarta2()" class="learnMoreButton">Scopri di più</a>
-                    </div>
-                </li>
-                <li class="card" id="card3">
-                    <div class="card-body">
-                        <div class="i3"></div>
-                        <a href="#" onclick="mostraDettagliCarta3()" class="learnMoreButton">Scopri di più</a>
-                    </div>
-                </li>
-                <li class="card" id="card4">
-                    <div class="card-body">
-                        <div class="i4"></div>
-                        <a href="#" onclick="mostraDettagliCarta4()" class="learnMoreButton">Scopri di più</a>
-                    </div>
-                </li>
-                <li class="card" id="card5">
-                    <div class="card-body">
-                        <div class="i5"></div>
-                        <a href="#" onclick="mostraDettagliCarta5()" class="learnMoreButton">Scopri di più</a>
-                    </div>
-                </li>
-            </ul>
-        </div>
+        <ul id="cards">
+            <li class="card" id="card1">
+                <div class="card-body">
+                    <div class="i1"></div>
+                    <a href="#" onclick="mostraDettagliCarta1()" class="learnMoreButton">Scopri di più</a>
+                </div>
+            </li>
+            <li class="card" id="card2">
+                <div class="card-body">
+                    <div class="i2"></div>
+                    <a href="#" onclick="mostraDettagliCarta2()" class="learnMoreButton">Scopri di più</a>
+                </div>
+            </li>
+            <li class="card" id="card3">
+                <div class="card-body">
+                    <div class="i3"></div>
+                    <a href="#" onclick="mostraDettagliCarta3()" class="learnMoreButton">Scopri di più</a>
+                </div>
+            </li>
+            <li class="card" id="card4">
+                <div class="card-body">
+                    <div class="i4"></div>
+                    <a href="#" onclick="mostraDettagliCarta4()" class="learnMoreButton">Scopri di più</a>
+                </div>
+            </li>
+            <li class="card" id="card5">
+                <div class="card-body">
+                    <div class="i5"></div>
+                    <a href="#" onclick="mostraDettagliCarta5()" class="learnMoreButton">Scopri di più</a>
+                </div>
+            </li>
+        </ul>
+    </div>
     <center>
         <div style="margin-bottom: 300px;">
-            <button class="acquista" onclick="redirectHome()" ><span>Torna alla home</span></button>
-            <button class="acquista" onclick="redirectNegozio()" ><span>Acquista altri pacchetti</span></button>
+            <button onclick="redirectHome()">Torna alla home</button>
+            <button onclick="redirectNegozio()">Acquista altri pacchetti</button>
         </div>
     </center>
+
+    
 </body>
 <script src="../login_registrazione/api-data.js"></script>
 <script src="../get_data.js"></script>

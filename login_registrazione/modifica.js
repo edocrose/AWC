@@ -124,5 +124,5 @@ function compraPacchetto(){
 function redirectToHome() {
     var username = document.getElementById('username').value;
 
-    window.location.href = "../home.html?username="+username;
+    window.location.href = "../home/home.html?username="+username;
 }

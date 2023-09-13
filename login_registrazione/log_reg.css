@@ -55,3 +55,74 @@ body {
   #login{
     color: red;
   }
+
+  .lista {
+    background-color: red;
+    width: 300px;
+    color: white;
+    border-radius: 20px;
+  }
+
+  /* Stile per il form */
+#registrationForm {
+  max-width: 400px; /* Larghezza massima del form */
+  margin: 0 auto; /* Centra il form nella pagina */
+}
+
+/* Stile per ciascun div nel form */
+#registrationForm div {
+  margin-bottom: 10px; /* Spazio tra i campi */
+}
+
+/* Stile per le etichette */
+#registrationForm label {
+  display: block; /* Rendi le etichette una riga separata */
+  font-weight: bold; /* Rendi il testo in grassetto */
+}
+
+/* Stile per gli input */
+#registrationForm input {
+  width: 100%; /* Riempie completamente il div padre */
+  padding: 8px; /* Spazio interno all'input */
+  box-sizing: border-box; /* Include il padding nella larghezza totale */
+}
+
+/* Stile per il form */
+#loginForm {
+  max-width: 400px; /* Larghezza massima del form */
+  margin: 0 auto; /* Centra il form nella pagina */
+}
+
+/* Stile per ciascun div nel form */
+#loginForm div {
+  margin-bottom: 10px; /* Spazio tra i campi */
+}
+
+/* Stile per le etichette */
+#loginForm label {
+  display: block; /* Rendi le etichette una riga separata */
+  font-weight: bold; /* Rendi il testo in grassetto */
+}
+
+/* Stile per gli input */
+#loginForm input {
+  width: 100%; /* Riempie completamente il div padre */
+  padding: 8px; /* Spazio interno all'input */
+  box-sizing: border-box; /* Include il padding nella larghezza totale */
+}
+
+/* Stile per il pulsante di accesso */
+#loginForm button {
+  background-color: #3498db; /* Colore dello sfondo del pulsante */
+  color: white; /* Colore del testo del pulsante */
+  border: none; /* Rimuovi il bordo del pulsante */
+  padding: 10px 20px; /* Spaziatura interna del pulsante */
+  font-weight: bold; /* Rendi il testo in grassetto */
+  cursor: pointer; /* Cambia il cursore al passaggio del mouse */
+}
+
+/* Stile per il pulsante di accesso quando si passa sopra */
+#loginForm button:hover {
+  background-color: #1a97ea; /* Cambia il colore dello sfondo al passaggio del mouse */
+}
+
