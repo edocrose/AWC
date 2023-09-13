@@ -240,6 +240,11 @@ body {
     color: white;
 }
 
+.descrizione .avLogoW {
+    width: 25px;
+    height: 25px;
+}
+
 .acquista {
     position: relative;
     background: #1e9bff ;
@@ -335,6 +340,7 @@ body {
 .total-price {
     font-size: 16px;
 }
+
 /*css barra home*/
 /* Stile generale della barra di avanzamento */
 .progress {
@@ -352,9 +358,7 @@ body {
     border-radius: 10px;
     height: 100%;
     width: 0%;
-    /* Inizialmente a larghezza zero */
     transition: width 0.5s ease-in-out;
-    /* Animazione di riempimento */
 }
 
 /* Stile del testo percentuale all'interno della barra */
