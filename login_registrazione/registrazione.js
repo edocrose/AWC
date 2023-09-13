@@ -7,7 +7,7 @@ function redirectToHome() {
     var json = JSON.parse(utenti);
     var data = json[json.length - 1];
 
-    window.location.href = "../home.html?username="+data.username;
+    window.location.href = "../home/home.html?username="+data.username;
 }
 
 function caricaUtenti() {
