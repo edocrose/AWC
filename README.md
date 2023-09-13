@@ -13,6 +13,6 @@ COSE DA FARE:
 
 -> controllare bene se ci sono errori nella console quando si fanno gli eventListener
 
--> aggiungere titoli alla scheda (sopra)
+-> aggiungere titoli alla scheda (FATTO)
 
 -> modificare font delle scritte
