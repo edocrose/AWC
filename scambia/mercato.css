@@ -71,6 +71,7 @@
   color: #1e9bff;
   letter-spacing: 0.25em;
   box-shadow: 0 0 35px #1e9bff;
+  cursor: pointer;
 }
 
 #FormScambio button:before {
@@ -177,6 +178,7 @@
   color: rgb(1, 199, 1);
   letter-spacing: 0.25em;
   box-shadow: 0 0 35px rgb(1, 199, 1);
+  cursor: pointer;
 }
 
 .accetta::before {
@@ -211,6 +213,7 @@
   color: rgb(202, 6, 6);
   letter-spacing: 0.25em;
   box-shadow: 0 0 35px rgb(202, 6, 6);
+  cursor: pointer;
 }
 
 .elimina::before {
