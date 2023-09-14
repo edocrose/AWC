@@ -7,8 +7,12 @@
 
 COSE DA FARE:
 
+-> sistemare la navbar in login e registrazione
+
+-> non si possono accettare scambi con carte che si hanno già
+
+-> controllare bene se ci sono errori nella console quando si fanno gli eventListener
+
+-> aggiungere titoli alla scheda (FATTO)
+
 -> modificare font delle scritte
-
--> provare a mettere le immagini nelle liste
-
--> modificare tutti i bottoni

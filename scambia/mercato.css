@@ -53,14 +53,35 @@
   text-align: center;
 }
 
-.ButtonScambio {
-  margin-top: 20px;
-  padding: 10px 20px;
-  background-color: #3498db;
-  color: white;
+#FormScambio button {
+  position: relative;
+  background: #1e9bff;
+  color: #1e9bff;
+  text-decoration: none;
+  text-transform: capitalize;
+  letter-spacing: 0.1em;
+  font-weight: 400;
+  padding: 10px 30px;
+  transition: 0.5s;
   border: none;
-  border-radius: 5px;
-  cursor: pointer;
+}
+
+#FormScambio button:hover {
+  background: #1e9bff;
+  color: #1e9bff;
+  letter-spacing: 0.25em;
+  box-shadow: 0 0 35px #1e9bff;
+}
+
+#FormScambio button:before {
+  content: '';
+  inset: 2px;
+  position: absolute;
+  background: #27282c;
+}
+
+#FormScambio button span {
+  position: relative;
 }
 
 .listaRichiesta {
