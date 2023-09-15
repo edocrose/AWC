@@ -6,6 +6,7 @@ body {
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
+    background-attachment: fixed;
     
 }
 /*da qui inizia il css per il nav delle pagine*/

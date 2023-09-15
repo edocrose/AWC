@@ -29,6 +29,8 @@ nome.textContent = carta.name
 const descrizione = document.createElement("p")
 const descriptionText = carta.description.replace(/, /g, ',<br>').replace(/\. /g, '.<br>');
 descrizione.innerHTML = descriptionText;
+const linea = document.createElement('div')
+linea.classList.add('linea')
 
 const comics = document.querySelector(".comics")
 const ul_com = document.createElement('ul');

@@ -1,7 +1,4 @@
 /*css per il scopri di più delle carte*/
-h1 {
-    color: white;
-}
 
 .contenuto {
     background-color: black;
@@ -29,16 +26,22 @@ h1 {
 }
 
 
-.contenuto .linea {
+.linea {
     border-left: 5px solid red;
     height: 345px;
     width: 2px;
     margin-right: 40px;
     margin-left: 40px;
+    
 }
 
 .obj {
     margin-left: 20px;
+    display: flex;
+}
+
+.obj .linea {
+    align-items: center;
 }
 
 .obj h3 {
@@ -53,4 +56,12 @@ h1 {
     color: white;
     list-style-type: disc;
     margin-left: 20px;
+}
+
+.comics,
+.events,
+.series {
+    flex: 1;
+    display: inline-block;
+    margin: 10px;
 }
