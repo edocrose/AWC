@@ -1,13 +1,14 @@
-body {
+body{
     margin: 0;
     padding: 0;
+    width: 100%;
+    height: 100%;
     font-family: 'Changa', sans-serif;
     background-image: url(immagini/sfondo.jpg);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
     background-attachment: fixed;
-    
 }
 /*da qui inizia il css per il nav delle pagine*/
 /* Navbar generale */

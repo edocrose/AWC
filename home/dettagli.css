@@ -1,5 +1,6 @@
 /*css per il scopri di più delle carte*/
 
+
 .contenuto {
     background-color: black;
     overflow: hidden;
@@ -32,16 +33,11 @@
     width: 2px;
     margin-right: 40px;
     margin-left: 40px;
-    
 }
 
 .obj {
     margin-left: 20px;
     display: flex;
-}
-
-.obj .linea {
-    align-items: center;
 }
 
 .obj h3 {

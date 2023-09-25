@@ -71,7 +71,7 @@ async function displayScambi() {
 }
 displayScambi();
 
-function effettuaScambio(user, scambio, index) {
+function effettuaScambio(user, scambio) {
   var scambioCompl = {
     cartaRichiesta: scambio.cartaRichiesta,
     cartaCeduta: scambio.cartaCeduta,
@@ -93,7 +93,12 @@ function effettuaScambio(user, scambio, index) {
   var indexCedutaDoppie = trovaCarta(scambioCompl.cartaCeduta, richiedente.doppie);
   var indexRichiestaCarte = trovaCarta(scambioCompl.cartaRichiesta, accetta.carte);
   var indexRichiestaDoppie = trovaCarta(scambioCompl.cartaRichiesta, accetta.doppie);
-  if (indexRichiestaDoppie != null) {
+  var controlloMazzo = trovaCarta(scambioCompl.cartaCeduta, accetta.carte);
+  console.log(accetta.carte[controlloMazzo]);
+  if(controlloMazzo!=null){
+    alert("La carta è già presente nel mazzo");
+    window.location.href = "mercato.html?username=" + username;
+  } else if (indexRichiestaDoppie != null) {
     var cartaCeduta = richiedente.doppie[indexCedutaDoppie];
     accetta.carte.push(cartaCeduta);
     richiedente.doppie.splice(indexCedutaDoppie, 1);
@@ -158,7 +163,7 @@ function effettuaScambio(user, scambio, index) {
     
 
     cancellaScambi();
-    console.log(scambi);
+    //console.log(scambi);
 
     //aggiorno il localStorage
     localStorage.setItem('utenti', JSON.stringify(utenti));
@@ -166,7 +171,7 @@ function effettuaScambio(user, scambio, index) {
 
     alert("Scambio effettuato con successo");
     getDataHome2();
-  } else {
+  }else{
     alert("Non hai la carta richiesta!");
     window.location.href = "mercato.html?username=" + username;
   }

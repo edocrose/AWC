@@ -1,7 +1,12 @@
 /* Stile base per il link */
+html{
+  height: 100%;
+}
+
 .header-scambi {
   margin-top: 20px;
   margin-bottom: 30px;
+  margin-left: 40px;
 }
 
 .link-button {
@@ -128,6 +133,8 @@
   align-items: flex-start;
     /* Allineamento in alto */;
   height: 100vh;
+  margin-top: 20px;
+  margin-left: 50px;
 }
 
 .change {
@@ -225,4 +232,14 @@
 
 .elimina span {
   position: relative;
+}
+
+.proposte {
+  display: block;
+  justify-content: center;
+  align-items: flex-start;
+    /* Allineamento in alto */;
+  height: 100vh;
+  margin-top: 20px;
+  margin-left: 50px;
 }

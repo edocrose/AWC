@@ -2,11 +2,11 @@ var urlParams = new URLSearchParams(window.location.search);
 var username = urlParams.get("username");
 var utenti = localStorage.getItem('utenti');
 var json = JSON.parse(utenti);
-var user = null;
+var user1 = null;
 for (var i = 0; i < json.length; i++) {
     if (json[i].username == username) {
-        user = json[i];
-        cards(user.doppie);
+        user1 = json[i];
+        cards(user1.doppie);
         break;
     }
 }

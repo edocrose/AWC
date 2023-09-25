@@ -180,8 +180,10 @@ function controllaScambio(newScambio, scambi) {
 
 function trovaUtente(username) {
   var index = null;
-  for (var i = 0; i < utenti.length; i++) {
-    if (utenti[i].username == username) {
+  console.log(json);
+  for (var i = 0; i < json.length; i++) {
+    
+    if (json[i].username == username) {
       index = i;
       break;
     }
@@ -192,7 +194,9 @@ function trovaUtente(username) {
 function controllaRichiesta(carta, username){
   var json = localStorage.getItem('utenti');
   var utenti = JSON.parse(json);
-  var user = utenti[trovaUtente(user)];
+  var index = trovaUtente(username);
+  var user = utenti[index];
+  console.log(index);
   for(let i=0; i<user.carte.length; i++){
     if(carta == user.carte[i].name){
       return false
